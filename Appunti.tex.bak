@@ -1,0 +1,1381 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fabio_zoratti_article}
+\usepackage{mdwlist}
+\usepackage{courier}
+\usepackage{siunitx}
+
+\author{Federico Belliardo \thanks{federico.belliardo@sns.it}}
+\title{Note di Astrofisica}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+ 
+\section{Strutture autogravitanti: equazioni costitutive caratteristiche dell’equilibrio.}
+
+\begin{itemize}
+\item Tempo di collasso:
+\begin{equation}
+t_f(F) = \left( \frac{3 \pi}{16 F G \bar{\rho}} \right) ^{\frac{1}{2}}
+\end{equation}
+Notare che $t_f(F) \propto \bar{\rho}^{-\frac{1}{2}}$.
+\item Durante il collasso la densità media $\bar{\rho}$ aumenta, ma questo non cambia l'ordine di grandezza del tempo di collasso.
+\item Il collasso a densità infinita avviene in un tempo finito. $t_f(F)$ è il tempo impiegato da una struttura ad aumentare la sua densità media in maniera significativa (variazione di ordine 1).
+\item \textbf{Equazione di Navier-Stokes}: $\eta$ è il coefficiente di viscosità e $\nabla \cdot \vec{v} = 0$ (il fluido è incomprimibile): 
+\begin{equation}
+\frac{\partial \vec{v}}{\partial t} + \left( \vec{v} \cdot \vec{\nabla} \right) \vec{v} = -\frac{1}{\rho} \vec{\nabla} p + \vec{g} + \eta \Delta \vec{v}
+\end{equation}
+\item Pressione al centro di un corpo celeste: $P_c \sim \frac{G}{4 \pi} \int_{0}^{M} \frac{M dM}{r^4}$. Per analisi dimensionale: $P_c \propto \frac{G M^2}{R^4}$. Se abbiamo un fattore $F$ allora $P \propto (1 - F) \frac{G M^2}{R^4}$. 
+\item \textbf{Modelli politropici}:
+Consideriamo l'equazione di equilibrio idrostatico $\frac{d P}{d r} = - g(r) \rho (r)$. Sostituiamo $g(r)$ con $-\frac{G M(r)}{r^2}$ e applichiamo l'operatore divergenza: $\frac{1}{r^2} \frac{d}{d r} \left( r^2 ... \right)$.
+Otteniamo l'equazione:
+\begin{equation}
+\frac{1}{r^2} \frac{d}{dr} \left( \frac{r^2}{\rho} \frac{dP}{dr} \right) = - G \frac{1}{r^2} \frac{dM}{dr} \left( r \right)
+\end{equation}
+Supponiamo che la relazione tra $P$ e $\rho$ sia una politropica: $P = C \rho^{\beta} = C \rho^{\frac{n+1}{n}}$.
+Poniamo $r = \xi \alpha$ e $\rho = \Theta^n \rho_0$. $\rho_0$ è la densità al centro. Ricordiamo che $\frac{dM}{dr} \left( r \right) = 4 \pi r^2 \rho \left( r \right)$. L'equazione di sopra prende la forma adimensionale:
+\begin{equation}
+\frac{1}{\xi^2} \frac{d}{d \xi} \left( \xi^2 \frac{d \Theta}{d \xi} \right) = - \Theta ^ n
+\end{equation}
+chiamata equazione di \textbf{Lane-Emden}. Dove $\alpha^2 = \frac{(n+1)C\rho^{\frac{1-n}{n}}}{4 \pi G}$ (scelto perché si semplifichino tutti i parametri dimensionali nell'equazione). Si richiedono le condizioni al bordo per $\Theta$: $\Theta(0) = 1$ e $\frac{d \Theta}{d \xi} \left( 0 \right) = 0$. Cioè la densità è massima al centro e ci arriva con derivata nulla.
+Si risolve l'equazione fino al primo zero di $\Theta \left( \xi_1 \right) = 0$.
+Il raggio dell'oggetto è definito proprio da $\xi_1$, infatti:
+\begin{equation}
+R = \xi_1 \alpha = \xi_1 \left[ \frac{(n+1) C \rho_0^{\frac{1-n}{n}}}{4 \pi G} \right] \propto C^{\frac{1}{2}} \rho_0 ^{\frac{1-n}{2n}}
+\label{firstLane}
+\end{equation}
+\begin{equation}
+M \propto C^{\frac{3}{2}} \rho_0 ^ {\frac{3-n}{2 n}}
+\label{secondLane}
+\end{equation}
+In genere sono dati la massa e il raggio e da questi due parametri conoscendo l'indice della politropica ($n$) si può risalire al valore del coefficiente $C$ e alla densità al centro.
+
+\item Dalle equazioni di Lane-Emden otteniamo le due relazioni fondamentali: $\rho_c \propto \frac{M}{R^3}$ (la risoluzione delle equazioni fornisce anche in coefficiente!) e $C \propto M^{\frac{n-1}{n}} R^{\frac{3-n}{n}}$.
+
+\item Un modello politropico di gas perfetto in condizioni isoterme ($n = +\infty$) ha raggio infinito, infatti la densità decresce esponenzialmente nel raggio.
+
+\item \textbf{Equazione di Eddington}: Equazione di stato per le stelle che considera sia il contributo della materia (come gas perfetto) sia quello della radiazione.
+
+\item Equazione di stato del gas perfetto: $P_g = \frac{k_b}{\mu m_p} \rho T$, dove $\mu$ è il peso molecolare della specie considerata e $m_p$ è la massa del protone.
+
+Supponiamo di avere più di una specie di gas che contribuisce alla pressione. In tal caso scrivo un'equazione dei gas perfetti per ognuna: $P_i = \frac{k_b}{\mu_i m_p} \rho_i T$. Chiamo $X_i$ l'abbondanza in massa della specie chimica $i-$esima: $\rho_i = X_i \rho$. Ottengo che la pressione totale $P = \sum_i P_i$ si può scrivere un termini della densità totale come $P = \frac{k}{\mu m_p} \rho T$ introducendo la media pesata armonica delle $\mu_i$ cioè:
+\begin{equation}
+\mu = \frac{1}{\sum \frac{X_i}{\mu_i}} = \frac{1}{\sum \frac{X_i}{A_i}}
+\end{equation}
+
+\item Cosa succede se c'è ionizzazione e quindi ci sono elettroni liberi? Bisogna calcolare che ogni specie chimica che compare con densità $X_i$ ora è ulteriormente suddivisa in $Z_i$ elettroni di massa $m_e \sim m_p/1800$ e un nucleo, che formano . Dunque questo si può correggere allo stesso modo calcolando il peso molecolare medio che risulta essere la massa media delle particelle che costituiscono il gas cioè $\mu = \frac{A_i}{Z_i + 1}$ dove si assume che l'elettrone sia massless. La densità di questo gas composto è sempre quella della specie chimica corrispondente $\rho_i$, cioè $X_i$:
+\begin{equation}
+\mu = \frac{1}{\sum \frac{X_i (Z_i +1)}{A_i}}
+\end{equation}
+
+\item Per l'idrogeno ($X$), l'elio ($Y$) e tutti gli altri elementi ($Z$) (al massimo grado di ionizzazione), assumendo $\frac{A}{Z+1} \sim 2$ otteniamo:
+\begin{equation}
+\mu = \frac{1}{2 X + \frac{3}{4} Y + \frac{1}{2} Z}
+\end{equation}
+
+\item Equazione di stato della radiazione: $P = \frac{1}{3} a T^4$.
+
+\item Equazione di stato di una stella:
+\begin{equation}
+P = \frac{k}{\mu m_p} T + \frac{1}{3} a T^4
+\end{equation}
+
+\item Introduco il rapporto $\beta = \frac{P_g}{P}$ e riscrivo la pressione come:
+\begin{equation}
+P = \left[ \frac{3}{a} (1 - \beta ) \left( \frac{k}{\mu m_p \beta} \right) ^ 4 \right]^{\frac{1}{3}} \rho^{\frac{4}{3}}
+\end{equation}
+
+Questa è l'equazione di stato di Eddington.
+
+\item \textbf{Modello standard di Eddington} Si approssima $\frac{3}{a} (1 - \beta ) \left( \frac{k}{\mu m_p \beta} \right) ^ 4 = C^3$. Ottenendo dunque l'equazione di stato politropica:
+\begin{equation}
+P = C \rho^{\frac{4}{3}}
+\end{equation}
+
+\item Dalla \ref{secondLane} otteniamo (per $n=3$) $M^2 \propto C^3$. Pertanto possiamo riorganizzare la formula che definisce il modello Standard di Eddington come:
+\begin{equation}
+F(\beta) = A \mu ^4 M ^ 2 \beta ^4 + \beta - 1 = 0
+\end{equation}
+con $A = 0.00298$ se $M$ è espressa in masse solari.
+
+\item Per piccole masse (ordine delle masse solari) $\beta \sim 1$, cioè la pressione è dominata dal gas e vale: $1 - \beta \propto M^2$. Per grandi masse (100 masse solari) $\beta \ll 1$, cioè domina la pressione di radiazione. Inoltre $\beta \propto M^{-\frac{1}{2}}$.
+
+\item Il contributo della pressione di radiazione è prevalente per grandi masse. E lo è ancora di più per grandi masse in espansione.
+
+\item \textbf{Nane bianche}: ultima fase di vita di una stella leggera (terminato l'idrogeno da fondere). Ipotesi:
+
+\begin{enumerate}
+\item Pressione dovuta esclusivamente a elettroni degeneri.
+\item Il gas di elettroni è dovunque non relativistico o ultrarelativistico.
+\item Si trascurano le interazioni tra elettroni.
+\end{enumerate}
+
+\item La fisica statistica fornisce le equazioni di stato per questo gas degenere (NON compare la temperatura nella costante $C$!): per un gas NR $P = C \rho^{\frac{5}{3}}$ per un gas UR $P = C \rho^{\frac{4}{3}}$.
+
+\item Dalle equazioni di LE otteniamo nei due regimi NR e UR: $M \propto \rho_c^{\frac{1}{2}}$ e $M = \text{const}$.
+
+\item Cioè in funzione della densità centrale la massa aumenta con la radice fino a raggiungere $M_{Chan}$ nel limite ultrarelativistico. Oltre questa massa non ci sono soluzioni di equilibrio.
+
+\item Costruiamo un modello rozzo basato sul teorema del viriale ($2 \langle K \rangle + \langle U \rangle = 0$) che ci consente di non risolvere le equazioni di Lane-Emden ma ottenere comunque una stima affidabile di $M_{Chan}$.
+
+\item Calcolo i valori medi di $2K$ e $U$. Poiché $\frac{3}{5} E_F$ è l'energia cinetica media per particella nel gas degenere:
+\begin{equation}
+\int e_{cin} dV = \frac{3}{5} N E_F
+\end{equation}
+\begin{equation}
+E_F = \frac{\hbar^2}{2 m_e} \left( \frac{3 \pi^2 N}{V} \right) ^ {\frac{2}{3}}
+\end{equation}
+Vale la relazione $n = \frac{\rho}{\mu_e m_p}$ cioè $N = \frac{M}{\mu_e m_p}$, sostituendo abbiamo:
+\begin{equation}
+2 \langle K \rangle = 2 \int e_{cin} dV = \frac{3}{5} (3 \pi^2)^{\frac{2}{3}} \frac{\hbar^2}{m_e} \left( \frac{1}{\mu_e m_p} \right) ^{\frac{5}{3}} M \rho^{\frac{2}{3}}
+\end{equation}
+dove $\mu_e$ è il numero di nucleoni per elettrone nel plasma (l'ipotesi è che solo gli elettroni contribuiscano alla pressione di radiazione). $\mu_e = 1$ per l'idrogeno e $\mu_e \sim 2$ per tutti gli altri elementi. 
+
+\item Introduciamo l'equazione del viriale: 
+\begin{equation}
+2 \int e_{cin} dV = \frac{3}{5} \frac{GM}{R} = \frac{3}{5} G \left( \frac{4}{3} \pi \right)^{\frac{1}{3}} M^{\frac{5}{3}} \rho^{\frac{1}{3}}
+\end{equation}
+Uguagliando le ultime due espressioni otteniamo la formula $\rho \propto M^2$, cioè $M \propto \rho^{\frac{1}{2}}$. La massa cresce fino a che si entra nel regime ultrarelativistico. Se avessimo usato l'espressione di $E_F$ in questo caso si sarebbe semplificata la dipendenza da $\rho$ e avremmo ottenuto $M = cost$, corrispondente a $M_{Chan}$.
+
+\item Nel caso $\mu_e = 2$ $M_{Chan}^{NB} = 1.4 M_{Sole}$
+
+\item In realtà il limite di Chandrasekhar per le nane bianche non è molto interessante perché per densità alte vengono meno le ipotesi del modello e interviene un processo di neutronizzazione della materia. E il termine prevalente della pressione diventa quello dei neutroni.
+Quindi anche se non c'è soluzione di equilibrio con materia elettronica può esistere nel caso di materia neutronica. Se si supera il limite di Chandrasekhar anche per le stelle di neutroni allora si va incontro al collasso.
+
+\item \textbf{Stelle di neutroni}: stelle compatte formate da un gas degenere di neutroni.
+
+\item Il modello precedente si può riciclare mediante argomenti di scaling.
+
+\item La densità di una stella di neutroni al di sotto di questa massa è:
+\begin{equation}
+\rho = 2.5 \cdot 10^{14} \si{\frac{\g}{\cm^3}} \left( \frac{M}{M_{Sole}} \right)^2
+\end{equation}
+
+\item Un calcolo banale porta a $M_{Chan}^{NS} = 4 M_{Chan}^{NB} = 5.7 M_{Sole}$, tuttavia questi due valori con modelli più complicati non sembrano essere molto lontani. 
+
+\item Riassumendo il collasso comincia quando si supera il limite di Chandrasekhar per le stelle di neutroni. Quando si supera quello per le nane bianche è vero che non c'è una soluzione di equilibrio ma di fatto cambiano le ipotesi perché le alte densità fanno intervenire altri processi (come la neutronizzazione).
+
+\item Le stelle di massa superiore al limite di Chandrasekhar collassano indefinitamente e diventano buchi neri. La materia dentro l'orizzonte degli eventi evolve inesorabilmente verso la singolarità. Considerando il raggio del buco nero uguale al raggio di Schwarzschild (che è il raggio dell'orizzonte degli eventi per un buco nero non rotante) la sua densità è:
+
+\begin{equation}
+\rho = 2 \cdot 10^{16} \si{\frac{\g}{\cm^3}} \left( \frac{M_{Sun}}{M} \right)^2 
+\end{equation}
+
+\item Un buco nero di massa galattica può non essere molto denso.
+
+\item Una galassia ha tempi di rilassamento collisionale molto maggiori dell'età dell'Universo (dovuti al grande cammino libero medio). Quindi non è all'equilibrio, non si può assegnare un'equazione di stato e non si può supporre l'esistenza di un equilibrio termodinamico locale. Come si dovrebbe fare volendo descrivere il sistema come un fluido dotato di un campo di temperatura, pressione, velocità. Le velocità delle singole stelle dipendono fortemente dalle condizioni iniziali. In questo senso non si può dire che la galassia ruoti come unico oggetto. Queste considerazioni si manifestano per esempio nel fatto che una galassia può essere allungata lungo l'asse della velocità angolare media.
+
+\item In realtà comunque anche se non collidono le stelle in una galassia interagiscono gravitazionalmente (questo non è sufficiente alla termalizzazione?). Evidentemente non interagiscono in maniera sufficiente.
+
+\item Un \textbf{corpo autogravitante in rotazione} è caratterizzato da un parametro adimensionale $u = \frac{\omega^2 R^3}{G M}$. Esso controlla il rapporto tra l'energia cinetica rotazionale e quella potenziale (gravitazionale): $\frac{E_r}{E_p} = \frac{u}{3}$. Per un corpo di densità uniforme $u = \frac{3}{4} \frac{\omega^2}{\pi G \bar{\rho}}$.
+
+\item L'eccentricità di una ellisse è definita come $e=\sqrt{1-\frac{b^2}{a^2}}$ dove $a$ e $b$ sono rispettivamente semiasse maggiore e minore.
+
+\item Per trovare la forma del corpo celeste si sfrutta \textbf{l'argomento di Newton}, ipotizzando che la sua forma sia un ellissoide di rotazione. Si impone l'equilibrio di due colonnine di fluido che hanno rispettivamente altezza uguale all'asse maggiore e all'asse minore e si trovano in un campo gravitazionale costante e uguale a quello al polo e all'equatore (dopo aver opportunamente sottratto la forza centrifuga): $a g_{eq} (1 - u) = b g_{polo}$. Da questa formula introducendo l'eccentricità si trova:
+\begin{equation}
+\omega^2 = \frac{1}{a} \left[ g_{eq} - g_{polo} \sqrt{1-e^2} \right]
+\end{equation}
+
+\item McLaurin calcolò i valori di $g_{eq}$ e di $g_{polo}$ per un ellissoide di rotazione. Da questo si ottiene per piccoli valori dell'eccentricità la relazione:
+\begin{equation}
+\frac{\omega^2}{\pi G \rho} = \frac{5}{6} e^2
+\end{equation}
+
+dunque $\omega \propto e$ e $u \propto e^2$.
+
+\item Schiacciamento ai poli: $\epsilon = \frac{a-b}{a} \sim \frac{\epsilon^2}{2}$ e vale: 
+\begin{equation}
+\epsilon = \frac{4}{5} u
+\end{equation}
+
+\item Per alte $\omega$ l'ellissoide di rotazione è in effetti una forma instabile. Le figure di equilibrio sono ellissoidi triassiali (di Jacobi). 
+
+\item Aumentando gradualmente il momento angolare dapprima si mantiene la forma di ellissoide di rotazione:
+\begin{equation}
+L = I(e) \omega = I(\omega) \omega
+\end{equation}
+
+La velocità angolare $\omega(L)$ aumenta finché non si raggiunge una eccentricità critica a quel punto comincia a diminuire perché il momento di inerzia cresce perché l'equilibrio si ha per ellissoidi di Jacobi. In seguito comincia la fissione del corpo celeste.
+\end{itemize}
+
+\section{Strutture autogravitanti: energia e stabilità.}
+
+\begin{itemize}
+
+\item \textbf{Teorema del viriale}:
+
+\begin{enumerate}
+\item Per un sistema isolato: $2 \langle K \rangle + \langle U \rangle = 0$. 
+\item Per un sistema sottoposto a una pressione esterna costante:
+$2 \langle K \rangle +  \langle U \rangle = 3 P \langle  V \rangle$
+\item Considerano \textbf{anche} la pressione interna, otteniamo: $\langle K \rangle = \frac{3}{2} \langle \int P_{int} V \rangle$. Dunque $3 \langle \int P_{int} V \rangle + \langle U \rangle = 3 P \langle V \rangle$.
+\end{enumerate}
+
+\item Durante l'evoluzione stellare in condizioni di quasiequilibrio ($t_{ev} \gg t_{ff}$) metà dell'energia dovuta alla contrazione gravitazionale ($- \langle \frac{U}{2} \rangle$) viene rilasciata come energia luminosa. L'altra metà viene usata per accrescere la temperatura. Il sistema ha capacità termica negativa.
+
+\item \textbf{Tempo di Kelvin-Helmtoltz}: Una stella parte da una configurazione in cui è molto rarefatta e fredda ($\langle U \rangle \sim 0$ e $\langle K \rangle \sim 0$), assumendo che abbia emesso luce con una potenza costante (luminosità) $L_0$ allora la sua età è: 
+\begin{equation}
+t_{KH} = \frac{| U | }{2 L_0}
+\end{equation}
+
+\item A parità di $M$ e $L_0$, 
+$t_{KH} \propto \bar{\rho}^{\frac{1}{3}}$, esso è quindi grande per strutture molo dense (nane bianche) viceversa le stelle giganti (poco dense) avranno vita breve.
+
+\item Il tempo di KH per il Sole è circa $30$ milioni di anni.
+
+\item Energia gravitazionale di una struttura con equazione di stato politropica $P = C \rho^{\frac{n+1}{n}}$: 
+\begin{equation}
+U = -\frac{3}{5-n} \frac{G M^2}{R}
+\end{equation}
+
+\item  Ipotizziamo $P = \alpha \rho^{1 + \frac{1}{n_{ad}}}$ e sia $e_I = \beta (S) \rho^{\theta}$ la densità in massa di energia interna. In una trasformazione adiabatica si ha $P = - \left( \frac{\partial E}{\partial V} \right)_{S} = \theta \beta \rho^{\theta + 1}$ questo fornisce $e_I = n_{ad} \frac{P}{\rho}$. $n_{ad}$ dipende dalla sostanza che esegue la trasformazione (gas perfetto, radiazione, ...)
+
+\item \textbf{Condizione di stabilità}: Consideriamo un corpo celeste in cui introduciamo una perturbazione nella forma di omotetia (\textit{self-similar}) $r \rightarrow \left( 1 + \alpha 	\right) r$. Supponiamo che la perturbazione sia adiabatica. Dunque per avere equilibrio deve essere: $\left( \frac{\partial E}{\partial \alpha} \right) _ {S} = 0$, $\left( \frac{ \partial^2 E} {\partial \alpha ^2} \right) _S > 0$. Questo porta alle due condizioni:
+
+\begin{gather}
+\begin{cases}
+3 \int P V = - U \text{ (viriale)}\\
+\int \left( \Gamma_{ad} - \frac{4}{3} \right) P dV > 0
+\end{cases}
+\end{gather}
+
+Se l'indice adiabatico $\Gamma_{ad}$ è costante la condizione di stabilità è $\Gamma_1 = \Gamma_{ad} > \frac{4}{3}$.
+
+\item Motivazione intuitiva della condizione di stabilità. La pressione interna vale:
+\begin{equation}
+P \propto (1 - F) G M^{\frac{2}{3}} \rho^{\frac{4}{3}}
+\end{equation}
+Sostituendo la $P$ nella formula precedente abbiamo:
+\begin{equation}
+\frac{\delta P}{P} = \frac{4}{3} \frac{\delta \rho}{\rho}
+\end{equation}
+Per una perturbazione adiabatica abbiamo: $\frac{\delta P}{P} = \Gamma_{ad} \frac{\delta \rho}{\rho}$ dunque per $\Gamma_{ad} = \frac{4}{3}$ l'equilibrio è sempre mantenuto.
+
+\item Considerando $P(\rho) = P_0 \left( \frac{\rho}{\rho_0} \right)^{\Gamma}$ l'equazione di un adiabatica e partendo da una situazione di equilibrio $P_0 = G M ^{\frac{2}{3}} \rho_{0}^{\frac{4}{3}}$ otteniamo:
+\begin{equation}
+1 - F = \left(\frac{\rho}{\rho_0} \right)^{\Gamma - \frac{4}{3}}
+\end{equation}
+Da questa si può capire come la struttura ripristini la sua condizione precedente dopo una perturbazione se $\Gamma > \frac{4}{3}$. Infatti se $\frac{\rho}{\rho_0} > 1$ dunque $F<0$ (ricordiamo $\frac{d v}{d t} = - F \frac{G M(r)}{r^2}$) quindi la struttura si espande e la densità diminuisce Similmente il caso $\frac{\rho}{\rho_0} < 1$.
+
+\item \textbf{Indici adiabatici}: in una trasformazione a $S$ costante sono definiti tre indici $\Gamma_1, \Gamma_2, \Gamma_3$. Mi ricordo solo $ \Gamma_1 = \left( \frac{d \log P}{d \rho}\right)_{S}$.
+
+\item \textbf{Pulsazioni}: Se in una struttura stellare sono presenti zone con $\Gamma_1 < \frac{4}{3}$ si possono avviare fenomeni pulsatori. Interpretiamo la variazione quadratica di energia dovuta a una perturbazione self-similar come dovuta a una forza di richiamo (con costante $K$), otteniamo così: $\omega^2 \propto \frac{K}{M} \propto \bar{\rho}$. Inoltre vale la relazione $L = 4 \pi R^2 a T^4$ dunque otteniamo:
+\begin{equation}
+L \propto M^{\frac{2}{3}} T_{e}^4 t_{puls}^{\frac{4}{3}} 
+\end{equation}  
+Questa relazione $L \propto  t_{puls}^{\frac{4}{3}}$ è ben verificata dalle osservazioni.
+
+\textbf{\textbf{Ionizzazione parziale}}: consideriamo una reazione di equilibrio $A \rightarrow B+c$. Definiamo il potenziale di ionizzazione come $I = c^2 \left(m_b + m_c - mA \right)$. Imponiamo che l'equilibrio chimico tra $A$ e $B+C$ attraverso $\mu_A = \mu_B + \mu_C$.
+
+\text Consideriamo delle particelle non relativistiche soggette alla statistica di Boltzmann, dotate eventualmente di più livelli energetici. Calcoliamo le densità $n_A$, $n_B$ e $n_C$. Ricaviamo:
+\begin{equation}
+\frac{n_B n_C}{n_A} = \frac{1}{\hbar^3} \frac{D_B(T) D_C(T)}{D_A(T)} \left( \frac{m_B m_C}{m_A} \frac{KT}{4 \pi}\right)^{\frac{3}{2}}e^{-\frac{I}{kT}}
+\end{equation}
+dove $D(T)$ sono funzioni che dipendono dalla struttura dei livelli eccitati.
+
+\item Per la ionizzazione dell'idrogeno ($H \rightarrow p + e^{-}$) abbiamo $m_B = m_p$, $m_A = m_p$ e $m_C = m_p$, $n_B = n_C = Xn$, $n_A = (1-X)n$. Sostituendo otteniamo \textbf{l'equazione di  Saha}:
+\begin{equation}
+\frac{x^2}{1-x} = \frac{m_p}{\rho \hbar^3} f(T) \left( \frac{m_e K T}{4 \pi} \right)^{\frac{3}{2}} e^{-\frac{I}{kT}}
+\end{equation}
+L'energia di ionizzazione per l'idrogeno è $I = 13.6$eV.
+
+\item Per calcolare $f(T)$ è necessario operate un troncamento della sommatori sul livelli a causa a causa della deformazione di essi dovuta alla vicinanza degli altri atomi (quindi della densità). I livelli entrano nel continuo. Pertanto $f$ è una $f(T, \rho)$.
+
+\item L'idrogeno si ionizza per temperature $5000 \si{\K}-10000 \si{\K}$. Durante la fase di ionizzazione l'energia fornita non è utilizzata per aumentare la temperatura. L'aumento dei gradi di libertà del gas causa comunque un aumento della pressione. Si capisce quindi che Gli indici adiabatici adiabatici scendono (fino ad $1$) perché la pressione aumenta più della temperatura.
+
+\item Nel Sole ($T = 6000 \si{\K}$) la ionizzazione è solo parziale in quanto è ancora possibile vedere che righe si assorbimento.
+
+\item La ionizzazione gioca un ruolo importante nell'avvio dei processi di pulsazione.
+
+\item \textbf{Produzione di energia}: nel bilancio energetico di una stella intervengono principalmente l'energia prodotta per cambiamenti della struttura, l'energia rilasciata dalle reazioni nucleari, l'energia rilasciata sotto forma di neutrini.
+
+\item Il collasso gravitazionale produce in termini assoluti più energia delle reazioni nucleari ma il suo rilascio è concentrato nelle fasi iniziali e finali di vita della stella. In numeri il collasso gravitazionale produce circa $0.1 Mc^2$ di energia mentre le reazioni nucleari solo $0.01 Mc^2$.
+
+\item Un'equazione di stato politropica può appartenere ad un gas perfetto nel caso in cui vi sia un gradiente di temperatura ($T \propto \rho^{\frac{1}{n}}$).
+
+\item Il trasporto di energia avviene grazie a vari meccanismi radiativi, convettivi e conduttivi.
+
+\item La radiazione è parzialmente assorbita mentre attraversa uno spessore di materia $dr$: $dI = - I \rho k dr = - I d \tau$, $\tau$ è la profondità ottica e $k$ è il coefficiente di opacità. Vale $d \tau = \rho k dr$.  
+
+
+\item Scrivendo un'equazione per la variazione radiale della pressione della radiazione (dovuta all'assorbimento) e uguagliandola a $\frac{d P}{d r} = \frac{4}{3} a T^3 \frac{dT}{dr}$ otteniamo un'equazione che lega il gradiente di temperatura con la luminosità locare (flusso di energia per unità di area):
+\begin{equation}
+\frac{dT}{dr} = - \frac{3 k \rho L(r) }{16 \pi a c T^3 r^2}
+\end{equation} 
+
+\item Nell'ipotesi che la pressione di radiazione sia il contributo prevalente alla pressione totale possiamo uguagliare le due espressioni:
+\begin{gather}
+\frac{d P}{d r} = -\frac{k}{c} \rho (r)  \frac{L(r)}{4 \pi r^2} \\
+\frac{dP}{dr} = -\frac{G M(r)}{r^2} \rho (r)
+\end{gather}
+assumiamo anche che l'opacità $k$ sia costante.
+
+otteniamo una proporzionalità tra $L$ e $M$ chiamata \textbf{limite di Eddington}:
+\begin{equation}
+\frac{L}{L_0} \propto 10^{4} \frac{M}{M_0}
+\end{equation}
+
+Il modello può essere corretto nel caso in cui $\beta$ è molto grande:
+\begin{equation}
+\frac{L}{L_0} \propto \left[ 1 - \beta (M) \right] 10^{4} \frac{M}{M_0}
+\end{equation}
+
+In particolare per stelle piccole $	1 - \beta \propto M^2$ dunque:
+\begin{equation}
+L \propto M^3
+\end{equation} 
+
+La relazione precedente è ben verificata sperimentalmente.
+
+\item Per oggetti che seguono il limite di Eddington (stelle grandissime e nuclei galattici) possiamo ricavare una stima del tempo di vita: $E = \alpha M c^2$ è l'energia totale disponibile ($\alpha \sim 0.1$ nel caso di collasso gravitazionale e $\alpha \sim 0.01$ per le reazioni nucleari). Otteniamo:
+
+\begin{equation}
+t_{vita} = \frac{\alpha M c^2}{L} = \alpha T_0
+\end{equation} 
+
+dove $T_0 \sim 2 \cdot 10^9$ anni. Abbiamo dunque tempi di vita più piccoli dell'età dell'Universo.
+
+\item Aggiungiamo che nelle stelle più grandi ($> 1.5 M_S$) il trasporto è di energia nelle zone esterne è radiativo (ipotesi necessaria per la derivazione di sopra) mentre il nucleo è conduttivo. Viceversa per stelle più piccole ($< 1.5 M_S$) il nucleo è radiativo e le zone esterne sono convettive. Le stelle nane son totalmente convettive.
+\end{itemize}
+
+\section{Il trasporto convettivo}
+
+\begin{itemize}
+
+\item Chiamiamo $\hat{\rho}_1$ e $\hat{P}_1$, $\rho_1$ e $P_1$ le pressioni iniziali di una bolla e dell'ambiente.
+Le pressioni e densità finali sono le stesse con pedice 2.
+
+\item Ipotizziamo che la bolla salga e si espanda in maniera adiabatica. La velocità di espansione è dell'ordine della velocità del suono $\sim 10^3 \si{\frac{\m}{\s}}$ mentre essa sale a velocità di ordine $10^2 \si{\frac{\meter}{\second}}$, quindi possiamo considerarla in ogni istante in equilibrio meccanico con l'ambiente $\hat{P} = P$ (stessa pressione del gas esterno).
+
+\item Supponiamo che la bolla inizialmente abbia stella densità e pressione del gas che la circonda. Alla fine:
+\begin{equation} \hat{\rho}_2 = \hat{\rho}_1 \left( \frac{\hat{P}_2}{\hat{P}_1} \right) ^ {\frac{1}{\Gamma_{AD}}} = \rho_1 \left( \frac{P_2}{P_1} \right) ^ {\frac{1}{\Gamma_{AD}}}
+\end{equation}
+L'equazione che lega la pressione e la densità è l'equazione della trasformazione adiabatica caratterizzata dall'indice adiabatico $\Gamma_{AD}$.
+
+\item La condizione di stabilità (\textbf{di Schwarzschild}) è $\hat{\rho}_2 > \rho_2$, infatti se la densità della bolla è più bassa di quella dell'ambiente la forza di Archimede tenderà a far salire ulteriormente la bolla. Essa si può scrivere anche come:
+\begin{equation}
+\frac{d \log \rho}{d r} < \frac{1}{\Gamma_{AD}} \frac{d \log P}{d r}
+\end{equation}
+cioè:
+\begin{equation}
+\frac{d \log P}{d \log \rho} < \Gamma_{AD}
+\end{equation}
+
+\item La convezione non si sviluppa se la pressione varia con la densità più lentamente che in una trasformazione adiabatica.
+
+\item Ipotizziamo che il gas sia perfetto ($\rho \propto \frac{P}{T}$) dunque la condizione di stabilità diventa:
+\begin{equation}
+\frac{1}{\Gamma_{AD}} < \frac{d \log \rho}{d \log P } = 1 - \frac{d \log T}{d \log P} = 1 - \nabla
+\end{equation}
+
+dove abbiamo definito $\nabla = \frac{d \log T}{d \log P}$, dunque la condizione di stabilità si scrive:
+\begin{equation}
+\nabla < 1 - \frac{1}{\Gamma_{AD}} = \nabla_{AD}
+\end{equation}
+
+\item Si può interpretare questa espressione dicendo che il gradiente di temperatura è superadiabatico e la bolla in espansione arriva nella posizione finale più calda dell'ambiente (quindi continua a salire).
+
+\item \textbf{Mixing length model}: modello semplificato per valutare il flusso di energia dovuto alla convezione.
+
+\item L'elemento convettivo si muove adiabaticamente verso l'alto per una certa altezza $h$ (mixing length) e cede poi il calore in eccesso, dunque:
+\begin{equation}
+F_{conv} =  \rho v c_p \delta T = \frac{1}{2} c_p \rho v \Big \langle \frac{dT}{dr} \Big | _ {ad} - \frac{dT}{dr} \Big \rangle h
+\end{equation}
+
+\item $\rho v $ è la portata in massa e $c_p$ è il calore specifico a pressione costante per unità di massa.
+
+\item Per estrarre delle stime dal modello dobbiamo introdurre dei valori per $v$ e $h$.
+
+\item Ci chiediamo quale gradiente di temperatura sarebbe necessario se tutto il flusso di energia fosse trasportato per via convettiva. Inserendo $v \sim 10^3 \si{\frac{\meter}{\second}}$ e $h \sim \frac{R}{10}$ per il Sole otteniamo $F_{conv} \sim F_{tot} \sim \frac{L}{4 \pi r^2}$ già per
+\begin{equation}
+\frac{dT}{dr} \Big | _ {ad} - \frac{dT}{dr} \sim 10^{-6} \si{\frac{\kelvin}{\cm}}
+\end{equation}
+
+\item Questo ci dice che nell'ipotesi estrema in cui tutta l'energia è trasportata per convezione il gradiente di temperatura nella stella differisce in maniera poco significativa da quello adiabatico.
+
+\item $h$ è dell'ordine di $H = -\frac{d r}{d \log P}$ che è la distanza in cui la pressione varia di un fattore $e$. Per un gas perfetto $H = \frac{kT}{\mu m_p g}$. Le stime per il Sole sono $h \sim 1.9 H$.
+
+\item Stimiamo $v$ integrando il lavoro totale svolto dalla forza di Archimede che accelera un elemento di massa $m$. Essa istantaneamente vale $F_{A} = - g V(h) \delta \rho(h)$, dove $V(h)$ è il volume all'altezza $h$ e $\delta \rho (h)$ è la differenza di densità della bolla e dell'ambiente.
+\begin{equation}
+\frac{1}{2} m v^2(h) = - \int _ {0}^{h} g V (h) \delta \rho(h) dh
+\end{equation}
+
+\item Per un gas perfetto vale $\frac{\delta \rho}{\rho} = - \frac{\delta T}{T}$ (la pressione della bolla e dell'esterno sono la stessa per ipotesi). Sostituendo otteniamo:
+\begin{equation}
+\frac{1}{2} m v^2 (h) = \int_{0}^{h} g V(h) \rho(h) \frac{\delta T(h)}{T(h)} dh
+\end{equation}
+Nel seguito sostituiamo $ V(h) \rho(h) = m$: la massa della bolla e introduciamo i valori medi $\langle T \rangle$ e $\langle g \rangle$ per temperatura e gravità lungo il percorso da $x = 0$ a $x = h$. Abbiamo anche rinominato la variabile di integrazione $x$ (prima era $h$) per maggior chiarezza.
+\begin{equation}
+\frac{m \langle g \rangle}{\langle T \rangle} \int_{0}^{h} dx \int_{0}^{x} \left( \frac{dT}{dr} \Big | _ {ad} - \frac{dT}{dr} \right) dx' \sim \frac{m \langle g \rangle}{\langle T \rangle} \Big \langle \frac{dT}{dr} \Big | _ {ad} - \frac{dT}{dr} \Big \rangle \frac{h^2}{2}
+\end{equation}
+Nell'ultima abbiamo introdotto il valore medio di $\left( \frac{dT}{dr} \Big | _ {ad} - \frac{dT}{dr} \right)$, che viene moltiplicato per $x$.
+
+\item Sostituiamo al posto del valore medio del gradiente di temperatura metà del gradiente alla posizione $h$:
+\begin{equation}
+v^2 (h) \sim h^2 \frac{\langle g \rangle}{\langle T \rangle} \Big \langle \frac{dT}{dr} \Big | _ {ad} - \frac{dT}{dr} \Big \rangle \sim \frac{h^2}{2} \frac{\langle g \rangle}{\langle T \rangle} \left( \frac{dT}{dr} \Big | _ {ad} - \frac{dT}{dr} \right)_{h}
+\end{equation}
+
+\item Scriviamo per un gas perfetto (ricordiamo che $\nabla = \frac{d \log T}{d \log P}$):
+\begin{equation}
+\frac{dT}{dr} = T \left( \frac{1}{T} \frac{dT}{dr} \right) = T \nabla \frac{1}{P} \frac{dP}{dr} = -\frac{T \nabla}{P} g \rho = - \frac{T \nabla g \rho \mu m_p}{k \rho T} = -\frac{\nabla g \mu m_p}{k}
+\end{equation}
+otteniamo finalmente:
+\begin{equation}
+v^2 = \frac{1}{8} g^2 h^2 \frac{\mu m_p}{K T} \left( \nabla_{h} - \nabla_{AD}^{h} \right) ^ {\frac{1}{2}}
+\end{equation}
+
+\item Mettendo insieme tutte le formule abbiamo:
+\begin{equation}
+F_{conv} \sim c_p \rho \left( \frac{h}{2 H} \right)^2 T \left( \frac{kT}{2 \mu m_p} \right)^{\frac{1}{2}} \left( \nabla - \nabla_{ad} \right)^{\frac{3}{2}}
+\end{equation} 
+
+\item Dobbiamo risolvere l'equazione del bilancio energetico per ricavare il gradiente alla posizione $r$:
+\begin{equation}
+F = F_{conv} + F_{rad} = \frac{L}{4 \pi r^2}
+\end{equation}
+
+\item Ricordiamo come la convezione sia possibile se $\nabla > \nabla_{ad}$. Se vale $\nabla >> \nabla_{ad}$ siamo in regime superadiabatico (la convezione dipende fortemente dal valore di $h$ e dalle approssimazioni fatte).
+
+\item La convezione permette l'uniformazione chimica. Un difetto del modello di mixing length è che l'elemento di fluido sparisce arrivato ad $h$. Esiste anche il problema dell'\textit{overshooting} per cui gli elementi convettivi si mescolano con la materia in zona non convettiva.
+
+\end{itemize}
+
+\section{Produzione di energia}
+
+\begin{itemize}
+\item La fusione nucleare è esotermica perché l'energia di legame (negativa) per nucleone decresce all'aumentare del numero atomico (fino al ferro). L'energia di legame cresce in valore assoluto all'aumentare del peso atomico.
+
+\item Perché avvenga la fusione i nuclei si devono avvicinare a distanza di $1 \si{\femto \m}$. Termicamente questo richiederebbe temperature dell'ordine di $10^{10} \si{\K}$ tuttavia l'effetto tunnel quantistico rende il processo efficiente anche a temperature di tre ordini di grandezza più basse ($10^{7} \si{\K}$).
+
+\item La velocità di reazione è: $r = \int N(v) v \sigma (v) dv$. Dove $v$ è la velocità relativa dei reagenti (i due nuclei), $N(v)$ è la densità di reagenti alla velocità $v$ e $\sigma(v)$ la sezione d'urto.
+
+\item $N(v)$ è la distribuzione di Boltzmann-Maxwell.
+
+\item $r = n^2 \langle \sigma v \rangle$, $n$ è la densità dei reagenti (supposta uguale).
+
+\item Scriviamo il valore medio di $\sigma v$:
+
+\begin{equation}
+\langle \sigma v \rangle \propto \int e^{-\frac{m v^2}{2 k T}} \sigma \left( v \right) v^3 dv \propto \int e^{-\frac{E}{k T}} E \sigma \left( E \right) dE
+\end{equation}
+
+\item Usando la WKB è possibile dimostrare che
+\begin{equation}
+\sigma(E) = \frac{S(E)}{E} e^{- b E^{-\frac{1}{2}}}
+\end{equation}
+con $b = \frac{\pi Z_B Z_C e^2 ( 2 m)^{\frac{1}{2}}}{\hbar}$ e $S(E)$ una funzione lentamente variabile dell'energia.
+
+\item Sostituendo si ottiene:
+\begin{equation}
+\langle \sigma v \rangle \propto \int e^{-\frac{m v^2}{2 k T}} \sigma \left( v \right) v^3 dv \propto \int e^{-\frac{E}{k T}} e^{- b E^{-\frac{1}{2}}} S \left( E \right) dE
+\end{equation}
+
+\item La funzione $f(E) = e^{-\frac{E}{k T}} e^{- b E^{-\frac{1}{2}}}$ ha un massimo circa a $E_0 = \left( \frac{b k T}{2} \right) ^ {\frac{2}{3}}$ chiamato \textbf{picco di Gamow}. Esso rappresenta l'energia a cui si ha la massima probabilità di un evento di fusione.
+
+\item \textbf{Principali catene di reazioni nucleari}
+
+\item PP1: protone + protone forma deuterio che insieme ad un altro protone produce elio3. 
+\begin{gather}
+p + p \rightarrow d + e^{+} + \nu \text{  debole} \\
+p + d \rightarrow He^{3} + \gamma \text{  forte} \\
+He^{3} + He^{3} \rightarrow He^4 + 2p \text{  forte}
+\end{gather}
+Due nuclei di elio3 danno elio4 e 2 protoni. E' molto lenta e consuma i p in $10^{10}$ anni.
+
+\item E' facile scrivere un sistema per $n = \frac{N}{V}$ per le varie specie chimiche. Chiamiamo $\sigma_{a}$, $\sigma_{b}$ e $\sigma_{c}$ le sezioni d'urto per le tre reazioni di PP1
+\begin{equation}
+\begin{cases}
+\frac{d n_d}{d t} = \frac{1}{2} \sigma_a n_p^2 - \sigma_b n_p n_d = 0 \\
+\frac{d n_{He^3}}{d t} = -\frac{1}{2} \sigma_c n_{He^3}^2 + \sigma_b n_p n_d
+\end{cases}
+\end{equation}
+La soluzione di equilibrio fornisce $n_d \propto \frac{\sigma_a}{\sigma_b} n_p$ e $n_{He^3} \propto \sqrt{\frac{\sigma_a}{\sigma_c} n_p}$. Ricordiamo che $\sigma_a \ll \sigma_b, \sigma_c$ in ogni caso si vede come la concentrazione di $He^3$ sia maggiore di $d$. 
+
+\item La concentrazione di deuterio è sempre molto bassa è la reazione $d+d$ è meno probabile di $He^{3}+He^{3}$. 
+
+\item La convezione favorisce l'omogeneità chimica creando una distribuzione a scalino per la densità delle varie specie.
+
+\item PP2: produzione di elio4 passando per berillio7 e litio7.
+
+\item PP3: produzione di elio4 passando per berillio7 e boro8. Il $30\%$ dell'energia finisce in neutrini.
+
+\item Le ultime due reazioni contenenti elementi pesanti sono favorite ad alte temperature.
+
+\item CNO: produzione di elio4 con C, N, O come catalizzatori. E' efficiente si gli elementi pesanti sono presenti fin dall'inizio e se $T > 25 \cdot 10^6 \si{\K}$. Per le stelle massicce questa catena rappresenta la principale fonte di energia (la transizione tra PP e CNO come relazione preferenziale è molto \textit{sharp}).
+
+\item 3$\alpha$: fusione di tre nuclei di elio4 (passando attraverso il berillio8) per ottenere carbonio12. Efficiente per $T>10^8 \si{\K}$.
+
+\item A $5 \cdot 10^9 \si{\K}$ il prodotto finale delle catene di reazione è ferro56.
+
+\item Eventi di fotodissociazione del ferro: $Fe + \gamma \rightarrow 12He + 4n$ sono coinvolti nei processi di nova e supernova.
+
+\end{itemize}
+
+\section{Gli osservabili dell'astrofisica stellare}
+
+\begin{itemize}
+
+\item La luminosità bolometrica è la luminosità integrata su tutte le lunghezze d'onda.
+
+\item La luminosità della stella è attenuata dall'assorbimento da parte del mezzo intergalattico e dall'atmosfera terrestre (dipendente dall'angolo).
+
+\item Per ogni lunghezza d'onda vi è un'altezza minima dalla superficie terrestre a partire dalla quale sono possibili le osservazioni.
+
+\item Gli strumenti di misura hanno diverse curve di sensibilità, anche queste devono essere considerate nel computo della luminosità rilevata. In particolare:
+\begin{itemize}
+\item L'occhio umano è sensibile alla radiazione tra $5500-6000 \si{\angstrom}$ .
+\item La curva fotografica è centrata su $4000-4500 \si{\angstrom}$.
+\end{itemize}
+
+\item Sistema fotometrico Johnson e Morgan (UBV, ultravioletto, blu e visibile) permette l'osservazione di diversi colori: filtro visuale, fotografico e ultravioletto vicino ($3600 \si{\angstrom}$). Le larghezze di banda sono ordine $1000 \si{\angstrom}$. Di recente l'UBV ha ottenuto due nuovi colori nel rosso ($7000 \si{\angstrom}$) e nell'infrarosso vicino ($9000 \si{\angstrom}$).
+Altri sistemi sono quello di  Ginevra (aggiunge 4 filtri a banda stretta nel visibile), di Stromgren con filtri a banda stretta nelle zone UBV, un filtro a $4700\si{\angstrom}$ e un filtro nella riga H$\beta$ ($4 \rightarrow 2$) ($4860 \si{\angstrom}$).
+
+\item Magnitudo relativa (formula di Pogson):
+\begin{equation}
+m = -2.5 \log I_V + const.
+\end{equation}
+
+\item Si fissa la Vega ($\alpha$ Lyr) avere magnitudo $0$. 
+
+\item Magnitudo assoluta: magnitudo relativa che avrebbe la stella se fosse a $10pc$ di distanza (l'intensità scala col quadrato della distanza):
+\begin{equation}
+M_{V} = m_{V} + 5 \log \left( \frac{10 \text{pc}}{r} \right) -A
+\end{equation}
+si considera anche che maggior distanza significa maggior assorbimento da parte del mezzo galattico (o intergalattico), $A$ rappresenta questo contributo ed è maggiore sul piano galattico ($A = \frac{r}{2000 \text{pc}})$.
+
+\item La magnitudine bolometrica è quella che otterremmo raccogliendo tutta la luce che giunge sulla Terra, cioè $S(\lambda) D_{\lambda} (\theta) = 1$. Questa quantità non è osservabile. Si definisce in astratto la correzione bolometrica: $m_{bol} = m_{V} + B.C.$
+
+\item $B.C. = 0$ per supergiganti di classe I e tipo F2.
+
+\item Possiamo anche definire a magnitudine bolometrica assoluta:
+
+\begin{equation}
+M_{bol} = -2.5 \log \frac{L}{L_0} + 4.74
+\end{equation}
+
+\item E' possibile definire delle magnitudini di colore $U-B = m_U - m_B$ e $B-V = m_B - m_V$. La distanza dalla sorgente può causare uno spostamento nel rosso a causa dell'assorbimento del mezzo interstellare.
+
+\item Lo spettro stellare è caratterizzato da una struttura continua (simile a un corpo nero) e da una serie di righe di assorbimento. Esso è il risultato dell'emissione di corpo nero e dell'assorbimento degli strati più esterni.
+
+\item Nel seguito studieremo la parte continua dello spettro come se fosse un corpo nero:
+\begin{equation}
+S_{\nu} = \frac{2 \pi h \nu^3}{c^2} \frac{1}{e^{\frac{h \nu}{k T}} - 1}
+\end{equation}
+integrando otteniamo la legge di Stefan-Boltzmann: $W = \sigma T^4$ e $\sigma \sim \int \frac{x^3}{e^x - 1} dx$.
+Il massimo di $S_{\lambda}$ si ha per $\lambda_{max} T = cost.$
+
+\item Ricordiamo la profondità ottica $d \tau = - k \rho dr$, da essa si può ricavare la luminosità totale emessa:
+\begin{equation}
+L_{tot} = 	\int L(\tau) e^{-\tau} d \tau
+\end{equation}
+dove $L(\tau)$ è la luce emessa dallo strato di profondità ottica $\tau$. Si può ipotizzare che $L(\tau)$ dipenda solo da $T(\tau)$. Invece di tenere traccia di $T \left( \tau \right)$ sostituiamo a $T$ una $T_{eff}$ (temperatura efficace)
+
+\item Esistono varie nozioni di \textbf{temperatura efficace}. Si può considerare la luminosità totale $L_{tot} = 4 \pi R^2 \sigma T^{4}_{eff}$, con $R$ raggio della stella. Oppure si può definirla sulla base della legge del corpo nero ma riferita soltanto all'emissione ad una precisa lunghezza d'onda (temperatura di brillanza). Alternativamente si può definire (sempre dalla legge del corpo nero) confrontando le emissioni in due diverse lunghezze d'onda.
+
+\item In un grafico $U-B$ vs. $B-V$ un corpo nero alle varie temperature descrive una retta. Si può vedere che le stelle solo approssimativamente definiscono una retta.
+
+\item Un una transizione atomica dell'idrogeno avviene da un livello eccitato $m$ a $n$. le classifichiamo in serie a seconda di $n$:
+\begin{itemize}
+\item $n = 1$ Lyman (UV)
+\item $n = 2$ Balmer (visibile), sono famose la riga $H \alpha$ : $3 \rightarrow 2$ a $6562,81 \si{\angstrom}$ e la $H \beta$ : $4 \rightarrow 2$ a $4860 \si{\angstrom}$.
+\item $n = 3$ Paschen (IR)
+\item $n = 4$ Braket (IR)
+\item $n = 5$ Pfund (IR)
+\end{itemize}
+
+\item Nel parlare di righe si assorbimento si ricordi che la transizione è l'inversa di quella segnata nella lista sopra. Quindi l'assorbimento alla riga $H \alpha$ corrisponde a passare da $n=2$ al livello eccitato $m = 3$.
+
+\item Le righe Balmer sono deboli sia per basse temperature (a causa della scarsa popolazione di $n=2$ il livello di partenza). Anche ad alte temperature le righe sono scarsamente visibili (tutti i livelli sono occupati, anche più di di $n=2$, anzi a $T$ alta l'idrogeno è ionizzato). La massima visibilità delle righe si ha per temperature intermedie dunque per stelle di tipo spettrale A ($9000\si{\K}$).
+
+\item Le stelle sono classificate da un codice che contiene una lettera (tipo spettrale) un numero da 0 a 9 (sottotipo) e un numero romano (I - V) che indica la classe di luminosità (assoluta). Il tipo spettrale dipende dalla temperatura effettiva ma anche dalle caratteristiche delle righe di assorbimento nello spettro. I tipi sono: \textbf{O, B, A, F, G, K e M} (Oh Be A Fine Girl, Kiss Me).
+Il numero romano è assegnato sulla base della larghezza di alcune linee, che sono legate alla densità della superficie, questa è legata in maniera inversamente proporzionale alla luminosità. Le stelle di tipo Ia sono le più luminose (supergiganti). Le stelle di tipo V sono le meno luminose (nane).
+
+\item La larghezza equivalente di una riga è la larghezza che avrebbe una riga corrispondente alla medesima sottrazione di energia, ma con un profilo rettangolare e completamente nera.
+
+\item L'intensità delle righe spettrali è dominata dall'abbondanza (densità) di assorbitori e dalla frazione di essi che si trova nel giusto livello eccitato per produrre l'assorbimento (per esempio la serie di Balmer si genera quando un idrogeno nel primo eccitato passa ai successivi). Questa densità è dominata dal fattore di Boltzmann.
+
+\item Il fatto che osserviamo linee di assorbimento ma non di emissione è legato al gradiente di temperature. Infatti $T$ diminuisce andando verso l'esterno dunque gli strati più esterni assorbono più luce di quanta ne emettono rispetto agli strati interni più caldi. Lo spettro continuo è ovviamente legato alla situazione di equilibrio termico della radiazione a una certa temperatura.
+
+\item La larghezza naturale di una riga è legata alla sezione d'urto Thomson che è proporzionale al quadrato del raggio classico dell'elettrone. $\Delta \lambda_{Nat} = 10^{-4} \si{\angstrom}$.
+
+\item Tre fattori contribuiscono all'allargamento delle righe spettrali:
+
+\begin{enumerate}
+\item l'allargamento Doppler dovuto  alla distribuzione termica delle velocità (più la turbolenza).
+La riga si ottiene convolvendo la lorenziana (che contiene l'allargamento naturale) con una gaussiana centrata intorno alla riga derivante dalla distribuzione di velocità. La larghezza della curva convoluta dipende dalla maggiore delle due larghezze:
+\begin{equation}
+\sigma ( \nu ) \propto \int d \nu e^{- A ( \nu^{*} - \nu_0)^2} \frac{1}{(\nu - \nu^{*})^2 + \left( \frac{\gamma}{4 \pi} \right)^2}
+\end{equation}
+Per trovare la larghezza Doppler delle righe bisogna considerare sia la velocità termica delle molecole che moti turbolenti. Per il Sole questo allargamento è $0.1 \si{\angstrom}$ decisamente superiore a $10^{-4} \si{\angstrom}$ che è l'allargamento naturale.
+
+\item L'allargamento da pressione dovuto alla vicinanza degli altri atomi che modificano i livelli energetici in maniera complicata (e che per via del teorema del limite centrale si può considerare come un allargamento gaussiano?). Questo allargamento dipende dalla gravità superficiale ed è importante per stelle dense come le nane, mentre è irrilevante per le stelle giganti (poco dense).
+
+\item L'allargamento da rotazione è dovuto alla diversa velocità di rotazione delle varie parti della stella:
+\begin{equation}
+\frac{\Delta \lambda}{\lambda} \sim \frac{\Delta v}{c} \sim 2 \frac{\omega R}{c}
+\end{equation}
+Questo allargamento può anche essere dell'ordine di $10^{-3}$.
+Le stelle di tipo O e B (e le A più luminose) sono rotatori veloci, mentre quelle di temperatura inferiore spesso sono rotatori lenti. Poiché non si riescono a risolvere le dimensioni delle stelle quello che si osserva è la somma di righe spostate verso il rosso e verso il blu. Quindi un allargamento.
+
+\item Effetto Doppler causato dal moto radiale: $\frac{\Delta \lambda}{\lambda} \sim \frac{v}{c}$. Stimando $\Delta \lambda$ possiamo dedurre la velocità radiale. Questo può anche essere dovuto alla natura binaria o pulsante della stella.
+Per oggetti al di fuori dalla galassia la $v_{rad}$ è dovuta principalmente alla legge di Hubble.
+\end{enumerate}
+
+\item Tra le righe di assorbimento del visibile e dell'UV c'è una discontinuità (di Balmer) dovuta all'addensamento delle righe di assorbimento per la transizione $n \rightarrow 2$ con $n \rightarrow +\infty$. Dunque generando un effetto di assorbimento continuo e un salto nello spettro.
+
+\item Il Sole è una stella di tip G2-V (nana).
+
+\item Le righe dell'idrogeno sono le più osservate perché l'abbondanza di questo elemento è circa costante nelle stelle ($\sim 70\%$).
+
+\item Nelle nane le righe di assorbimento sono larghe a causa dell'allargamento da pressione. Mentre nelle giganti le righe sono strette perché domina l'allargamento Doppler.
+
+\item Il riconoscimento delle righe spettrali e della loro dispersione (estensione della riga spettrale sulla lastra fotografica) da informazioni riguardo al tipo spettrale (basse dispersioni $100 \si{\frac{\angstrom}{\milli \meter}}$), alla pressione e alla temperatura (medie dispersioni) e alla composizione dell'atmosfera (alte dispersioni $< 10 \si{\frac{\angstrom}{\milli \meter}}$).
+
+\end{itemize}
+
+\section{Il diagramma HR e le caratteristiche fisiche delle stelle}
+
+\begin{itemize}
+
+\item Si può misurare direttamente la magnitudo apparente della stella ma per conoscerne la luminosità è necessario misurarne la distanza. Ciò precede ogni interpretazione astrofisica.
+
+\item Il modo più semplice è quello della misura della \textbf{parallasse relativa} ad un gruppo di stelle considerate fisse. Coincide molto bene con la \textbf{parallasse assoluta} (misurata rispetto ad un sistema di coordinate assoluto, cioè rispetto ad una direzione costante nell'universo).
+
+\item Esistono la parallasse diurna (usata per la Luna) e la parallasse annua (permette di valutare la distanza di oggetti esterni al sistema solare). Una stella compie sulla sfera celeste una piccola ellisse di diametro angolare pari a quello che sottenderebbe l'orbita della Terra vista dalla stella. Durante $12$ un osservatore sulla Terra percorre una distanza maggiore per rivoluzione che per rotazione. Questa è la basa da usare nella parallasse.
+
+\item Il \textbf{parsec} è la distanza alla quale il semiasse maggiore dell'orbita terrestre sottende un angolo di un secondo d'arco. Esso misura circa $3$a.l., le stelle più vicine sono ad alcuni parsec di distanza.
+
+\item Il limite di diffrazione di un telescopio è $\frac{D}{\lambda}$. Per $D = 1 \si{\m}$ e $\lambda = 5000 \si{\angstrom}$ esso è $0.1''$. Una vera misura si fa tramite un \textit{best-fit} dell'ellisse teorica. La precisione del millesimo di secondo d'arco si raggiunge solamente fuori dall'atmosfera a causa del \textit{seeing} atmosferico. Si possono usare tecniche come l'ottica adattiva laser e la \textit{specke-interferometry} (in cui le proprietà statistiche dello spettro della turbolenza vengono considerate nell'analisi dell'immagine).
+
+\item Missioni spaziali: \textbf{Hypparcos}, \textbf{Gaia} (precisione $0.001''$).
+
+\item La parallasse $\pi$ sono i secondi d'arco che un corpo spazza sulla volta celeste (in $\frac{''}{ua}$) per la distanza (proiettata) che percorre (in ua). $\mu$ è il moto proprio (in $\frac{''}{anno}$):
+\begin{equation}
+\mu = \frac{V_S \sin (\lambda)}{4.74} \pi
+\end{equation}
+$\lambda$ è l'angolo di osservazione, $V_S = 300 \si{\frac{\kilo \meter}{\s}}$ è la velocità del Sole rispetto alle stelle locali. Il fattore numerico è legato alla conversione delle unità di misura.
+
+\item In sostanza vale $\pi = \frac{1}{d}$ dove $d$ è al distanza della stella.
+
+\item Il moto proprio (in termini di secondi d'arco all'anno) permette di stimare la distanza delle stelle.
+
+\item $H = \frac{\pi V_S}{4.74}$ si chiama parallasse secolare.
+
+\item Si capisce come una misura del moto proprio permetta di calcolare $\pi$ e quindi stimare la distanza.
+
+\item Per $N$ stelle è possibile definire la parallasse media: $\pi = \frac{4.74 \sum \mu}{V_0 \langle sin \lambda \rangle N}$. Dove si fa l'assunto che le stelle abbiano tutte la stessa velocità rispetto al Sole.
+
+\item Per stelle in un a stessa associazione fisica da misure Doppler si può ricavare $V_r$ e quindi calcolare  la parallasse di gruppo: $\pi_{gr} = \frac{4.74 \mu}{V_r \tan (\lambda) }$.
+
+\item Si possono studiare le parallassi statistiche di un ammasso dove le stelle sono trattare come un gas isotropo e una distribuzione di equilibrio è assunta per le loro velocità. Il confronto delle misure Doppler e di moto proprio permette di stimare la distanza dell'ammasso.
+
+\item Dalla misura di distanza si può ricavare la luminosità assoluta (che avrà l'errore relativo di $r^2$). Da questa troviamo la magnitudo assoluta e il suo errore $\Delta M = 2 \frac{\Delta \pi}{\pi}$.
+
+\item Possiamo costruire il \textbf{diagramma di Hertzsprung-Russel} che mostra la magnitudo assoluta in funzione di $B-V$ (cioè la differenza tra la magnitudo nel blu e nel visuale). Questo grafico è a volte riportato avere sugli assi $M_{bol}$ (la magnitudo bolometrica, cioè integrata su tutte e lunghezze d'onda) e il tipo spettrale.
+
+\item Spesso si considera solamente la magnitudo assoluta visuale $M_V$ (con la luminosità integrata solo sul visibile).
+
+\item Studiamo il diagramma HR di certe associazioni fisiche di stelle (ammassi aperti sul piano galattico, ammassi globulari
+in alone,...). Questo perché le stelle hanno un'origine comune e dunque una simile età e composizione chimica.
+Si vede che esse si dispongono su una curva uniparametrica detta \textbf{sequenza principale}.
+
+\item Ammassi diversi (ma simili fisicamente) hanno linee parallele nel diagramma $m_V/(B-V)$ questo è interpretabile come una differenza nella distanza degli ammassi. Conoscendo la distanza di uno si può stimare la distanza degli altri collassando le sequenze principali una sull'altra in un diagramma $M_V/(B-V)$ (dove appunto introduciamo la magnitudo assoluta).
+
+\item I diagrammi HR presentano un punto di \textbf{turn-off} in cui la sequenza principale si piega verso destra (questo è dovuto alle stelle che esauriscono il combustibile nucleare). Se il turnoff avviene per $B-V$ piccolo l'ammasso è giovane viceversa è vecchio. Infatti le stelle che lasciano la sequenza principale sono le giganti rosse, e il loro numero misura naturalmente l'età di un ammasso.
+I diagrammi HR sono classificati sulla base del turn-off creando la \textbf{sequenza d'età}.
+
+\item Si può ricostruire il diagramma HR introducendo la luminosità assoluta, la temperatura efficace e il raggio della stella. Mostrando come le stelle della sequenza principale hanno un raggio non troppo dissimile da quello del Sole. Mentre le stelle che hanno superato il turn-off hanno raggi maggiori.
+
+\item Nel grafico $\log \left( \frac{L}{L_S} \right)$ vs $\log \left( \frac{T_e}{T_{eS}} \right)$ le linee di raggio costante sono a $135^{\circ} $ rispetto all'asse delle ascisse. Infatti dalla formula della temperatura efficace: $L = 4 \pi \sigma R^2 T^4$ abbiamo:
+\begin{equation}
+\log \left( \frac{L}{L_S} \right) = 2 \log \left( \frac{R}{R_S} \right)+4\log \left( \frac{T}{T_S} \right)
+\end{equation}
+
+\item In basso a sinistra si trovano le subnane e le nane bianche. Le prime hanno deboli spettri di assorbimento e si distribuiscono in una striscia parallela alla sequenza principale di magnitudo superiore ad essa di $1$ unità. Le nane bianche hanno le righe di assorbimento allargate a causa della densità superficiale, esse stanno in una zona molto in basso a destra del digramma.
+
+\item Bisogna stare attenti nello stimare la distanza di un ammasso a non far coincidere la sequenza principale con la linea delle nane. Sbagliando quindi la misura.
+
+\item La massa della stella può essere stimata in maniera diretta solo mediante effetti gravitazionali come il \textbf{redshift}. Esso è tuttavia quasi sempre troppo piccolo per essere osservato. Le stelle doppie sono la fonte principale di informazioni sulle masse e i raggi delle stelle perché possiamo osservare gli effetti di una stella sull'altra.
+
+\item Le stelle doppie costituiscono metà delle stelle osservate.
+
+\item Si possono studiare le leggi del moto orbitale, misurare i periodi e le distanza dai quali ricavare le masse.
+
+\item Caratteristiche delle principali binarie:
+
+\begin{enumerate}
+\item \textbf{Visuali}: vicine alla Terra, distanti l'una dall'altra (separazione angolare non troppo distante da $1''$), periodo lungo ma non lunghissimo (per poter riconoscere il moto relativo). Simile luminosità (spesso gemelle).
+\item \textbf{Spettroscopiche}: scoperte mediante l'effetto Doppler causato dalla variazione periodica delle velocità radiali. E' necessario che gli oggetti non siano troppo deboli in modo da poterne prendere uno spettro di media dispersione.
+\item \textbf{Ad eclissi}: separazione corrispondente a pochi raggi stellari, di periodo corto (tutto ciò è necessario per osservare l'eclissi). Sono le più facili da scoprire e osservare (grazie alla curva di luce) anche se è molto improbabile in effetti. A scopo illustrativo per due Soli con periodo un anno il piano dell'orbita deve formare un angolo di al più un grado con la linea di vista.
+\end{enumerate}
+
+\item Nel seguito di analizzeranno come la loro massa e il loro raggio:
+
+\begin{enumerate}
+\item \textbf{Binarie visuali}: consideriamo la legge di Keplero (in unità astronomi e anni, introducendo la parallasse $\pi$):
+\begin{equation}
+M_1 + M_2 = \frac{1}{P^2} \left( \frac{a''}{\pi} \right)^3
+\end{equation}
+$a''$ è l'apertura angolare misurata in secondi d'arco. $\pi$ è la parallasse ($\frac{1}{d}$) e $P$ è il periodo. 
+Inoltre le distanze dal centro di massa per le due stelle sono $a_1$ $a_2$. Abbiamo:
+\begin{equation}
+\frac{M_1}{a_1} = \frac{M_2}{a_2}
+\end{equation}
+Misurate queste possiamo risolvere il sistema e ricavare $M_1$ e $M_2$. Ricordiamo che $a = a_1 + a_2$. Finché la binaria è visuale possiamo determinare i semiassi anche se le orbite sono ellittiche e hanno una inclinazione non banale con la linea di vista.
+\item \textbf{Binarie spettroscopiche}: in questo caso non potendo osservare direttamente l'orbita non è possibile misurare l'angolo di inclinazione $i$ (dell'orbita rispetto alla linea visuale), pertanto dobbiamo portarlo dietro nei calcoli. La periodicità degli effetti spettroscopi fornisce il periodo del sistema. Vale ancora la legge di Keplero:
+\begin{equation}
+(M_1 + M_2) \sin^3 i = \frac{1}{P^2} \left( \frac{a''}{\pi} \right)^3 \sin^3 i
+\end{equation}
+Da misure spettroscopiche di effetto Doppler è possibile calcolare le velocità radiali e da queste $a_1 \sin i$ e $a_2 \sin i$. Si misura quindi il rapporto delle masse:
+\begin{equation}
+\frac{a_1 \sin i}{a_2 \sin i} = \frac{M_1}{M_2}
+\end{equation}
+da questo si calcola il valore di $M_1 \sin i$ e $M_2 \sin i$. In realtà si possono ricavare queste quantità anche solo conoscendo $a_1 \sin i$, cioè avendo accesso allo spettro di una sola delle due stelle:
+\begin{equation}
+a = a_1 + a_2 = a_1 \left( 1 + \frac{a_2}{a_1} \right) = a_1 \frac{M_1+M_2}{M_2}
+\end{equation}
+L'angolo $i$ può essere valutato durante una eclissi se il sistema è anche fotometrico, altrimenti ci accontentiamo di un limite inferiore alle masse.
+\item \textbf{Binarie ad eclissi ( o fotometriche)}:
+i raggi delle due stelle sono indicati con $R_L$ e $R_S$. Dalle misure sulla curva fotometrica è possibile ricavare $\frac{R_S}{a}$ e $\frac{R_L}{a}$. Cioè abbiamo informazioni sui raggi delle stelle avendo già misurato $a$.
+\end{enumerate}
+
+\item Possiamo confermare ancora l'importante relazione teorica tra la massa e la luminosità delle stelle che vale per le stelle della sequenza principale:
+\begin{align}
+L \propto M^4 \; \text{per} \; M < 0.8 M_{S} \\
+L \propto M^3 \; \text{per} \;  M > 0.8 M_{S} 
+\end{align}
+
+\end{itemize}
+
+\section{Composizione chimica e popolazioni stellari}
+
+\begin{itemize}
+
+\item Ammasso globulare: ammasso di stelle piuttosto denso che orbita come un satellite intorno al nucleo galattico.
+
+\item Un ammasso galattico è un insieme di poche stelle unite gravitazionalmente e generate da una stessa nube di gas che si trovano sul piano galattico. Anche detti ammassi aperti.
+
+\item Si vorrebbe stimare l'età delle stelle a prescindere dai modelli teorici. Impossibile. In genere vengono suddivise in \textbf{popolazioni} (che sono come delle generazioni) sulla base di:
+\begin{enumerate}
+\item Caratteristiche delle stelle più brillanti in ciascun sistema.
+\item Comportamento cinematico dei gruppi di stelle
+\item Peculiarità spettroscopiche
+\end{enumerate}
+
+\item \textbf{Stelle più brillanti}: i bracci delle galassie a spirale  (e gli ammassi irregolari e aperti) presentano molte giganti blu (giovani). Esse contengono stelle di popolazione I. Mentre gli ammassi globulari e le galassie ellittiche presentano molte stelle supergiganti rosse (vecchie), queste strutture contengono quindi stelle di popolazione II.
+
+\item \textbf{Comportamento cinematico}: si può, a volte, stimare l'età di un gruppo di stelle riavvolgendo la loro espansione a velocità costante.
+La distribuzione delle velocità delle stelle vicine è una bimodale che permette la suddivisione in stelle veloci (velocità relativa a noi $ > 60 \si{\frac{k \meter}{\second}}$) e stelle lente. Le veloci sono spesso giganti rosse, mentre quelle di classe O o B sono lente. Le nubi interstellari hanno anche bassa velocità e questo porta a pensare che le stelle blu siano più giovani.
+
+\item Le stelle più veloci avendo anche orbite inclinate rispetto al piano galattico presentano (rispetto al Sole) fasi retrograde del moto.
+
+\item \textbf{Popolazione II}: stelle povere di metalli, composizione (in teoria) pari a quella successiva alla nucleosintesi primordiale (\textbf{differenze spettroscopiche}). Stelle molto antiche. Orbite ellittiche molto inclinate rispetto al piano galattico. Stelle veloci.
+\textbf{Popolazione I}: nascono da  nubi prodotte da stelle di popolazione II, più giovani. E' più facile che abbiano sistemi planetari (grazie alla maggiore metallicità). Il Sole è tra queste.
+
+\item La \textbf{composizione chimica} di una stella viene principalmente inferita dalle righe di assorbimento nel suo spettro. Le abbondanze dei vari elementi si riferiscono all'esterno della stella. La superficie dovrebbe dare informazioni sulla composizione iniziale della stella (poiché in essa non avvengono reazioni nucleari) tuttavia fenomeni di \textbf{dredge up} portano materiale che prima era nel nucleo in superficie.
+
+\item Le stelle più massive evolvono più velocemente. Infatti $E \propto M$, $L \propto M^3$ e dunque $E = L \Delta t$ otteniamo $\Delta t \propto \frac{1}{M^2}$. Si possono osservare violazioni a questa legge dovute a scambi di massa in sistemi binari (per esempio).
+
+\item La composizione chimica di una stella è caratterizzata da 3 abbondanze relative: $X+Y+Z = 1$. Per le stelle di popolazione II $Z \sim 0.3\%$, per popolazione I si arriva anche a $3\%$.
+
+\item Le stelle di sequenza principale fondono idrogeno in elio. Reazione esotermica che libera $7\frac{\text{MeV}}{\text{adrone}}$. Il processo di fusione avviene attraverso cicli PP (sia tramite interazioni forti che deboli) ($10^7 K$). Il ciclo CNO richiede temperature più alte ($2-3 \times 10^7 K$) . Quando il bruciamento si sposta nelle zone periferiche la stella si sposta sul ramo delle giganti. All'interno se la temperatura è $10^8 K$ può avvenire il processo $3 \alpha$ che brucia elio in carbonio. La catena continua fino al ferro (ultima reazione esotermica). Può avvenire la fusione di nuclei più pesanti ma non è esotermica.
+
+\item Le stelle più antiche si sono formate nell'alone galattico, mentre le più recenti nel disco.
+
+\item Le stelle giovani presentano una metallicità  maggiore perché sono originate da nubi prodotte da stelle vecchie che hanno già alto Z.
+
+\item Rimane un dubbio: la metallicità predetta dai modelli cosmologici è più piccola di 1000 volte quella presente nelle stelle vecchie quanto l'universo. Non sappiamo perché. \textbf{Popolazione III}.
+\end{itemize}
+
+\section{Il sistema Solare}
+\begin{itemize}
+\item Giove occupa $30''$ d'arco sulla sfera celeste.
+
+\item Per i pianeti l'effetto di scintillazione è ridotto. La dimensione dell'immagine non è data dalla diffrazione e dal seeing atmosferico (moti turbolenti, gradienti di temperatura, ...) ma dalle loro effettive dimensioni.
+
+\item I pianeti non hanno fonti di energia interna. In generale si introduce un parametro $A_{\lambda}$ che è la quantità di luce solare riflessa dal pianeta. La luminosità del pianeta è: $L_{p} (\lambda) = A_{\lambda} L_{\lambda}$. $L_{\lambda}$ è la luce emessa dal Sole che arriva sulla superficie del pianeta.
+
+\item Integrando $L_p = \int A_{\lambda}  L_{\lambda} d \lambda $, possiamo introdurre un albedo medio: $L_p = A \int L_{\lambda} d \lambda$.
+
+\item Scriviamo poi l'intensità luminosa vista dalla Terra come: $I_V = \int \frac{S_{V}(\lambda) A(\lambda) D(\lambda, \theta) L_{S}(\lambda) R_p^{2}}{16 \pi r_{pT}^{2} r_{pS}^{2}}$ e la magnitudo relativa utilizzando la formula di Pogson:
+\begin{equation}
+m_V = -2.5 \log \left( \int S_V (\lambda) A_{\lambda} D(\lambda, \theta) L_{S} (\lambda) \right) - 5 \log(R_p) + 5 \log(r_{pT}) + 5 \log(r_{pS}) + C
+\end{equation}
+Si può anche in questo caso definire un albedo medio $A'$ che finisce nel raggio efficace del pianeta:
+\begin{equation}
+m_V = -2.5 \log \left( \int S_V (\lambda) D(\lambda, \theta) L_{S} (\lambda) \right) - 5 \log(R_{eff}) + 5 \log(r_{pT}) + 5 \log(r_{pS}) + C
+\end{equation}
+con $R_{eff} = \sqrt{A'} R_p$
+
+\item Supponiamo che $r_{TS} \ll T_{pS}$ allora possiamo scrivere: $m_V = m_0 + 10 \log(r_{pS})$ introducendo $m_0$ la magnitudo assoluta per i pianeti (che non dipende dalla distanza).
+
+\item Si vede che la luminosità decresce con $\frac{1}{r^4}$, pertanto è difficile scoprire i pianeti lontani.
+
+\item Un pianeta si trova all'opposizione si trova dalla stessa parte della Terra rispetto al Sole e sulla volta celeste il pianeta e il Sole sono appunto opposti. Viceversa un pianeta in congiunzione è vicino alla Stella sulla volta celeste. Un pianeta in quadratura si trova a $90 \si{\degree}$ rispetto alla stella.
+
+\item In genera per un pianeta ci aspettiamo un emissione bimodale, dovuta alla componente riflessa dal Sole (visibile) e alla componente di emissione termica (infrarossa).
+
+\item Stimiamo la temperatura di un pianeta supponendo che sia un corpo nero e che l'energia assorbita sia ridistribuita equamente sulla superficie: $4 \pi R_p^2 \sigma T_p^{4} = \left( 1 - A \right) \frac{L_S R_p^{2}}{4 r_{pS}^{2}} = \frac{\pi R_S^{2} \sigma T_{S}^{4} R_p^2}{r_{pS}^2}$. Da questo si ricava:
+\begin{equation}
+T_p = \left( \frac{1-A}{4} \right)^{\frac{1}{4}} \left( \frac{R_{S}}{r_{pS}} \right) ^{\frac{1}{4}} T_{S} 
+\end{equation}
+
+\item In realtà l'ipotesi di un corpo nero è in contraddizione con il fatto che il pianeta ha una certa albedo ($A$). Introduciamo quindi un modello di corpo grigio in cui il pianeta emette uno spettro di corpo nero rinormalizzato con potenza totale $1-A$ rispetto a quella del corpo nero alla corrispondente temperatura. Troviamo quindi:
+\begin{equation}
+T_p = \left( \frac{1}{4} \right)^{\frac{1}{4}} \left( \frac{R_{S}}{r_{pS}} \right) ^{\frac{1}{4}} T_{S} 
+\end{equation}
+
+\item In generale la temperatura di un pianeta non è uniforme. Possiamo tuttavia introdurre un limite superiore sulla temperatura introducendo un equilibrio locale:
+\begin{equation}
+T_p = \left( \frac{R_{S}}{r_{pS}} \right) ^{\frac{1}{4}} T_{S} 
+\end{equation}
+In generale i poli di un pianeta hanno temperature più basse a causa della minore esposizione solare. L'escursione termica giorno/notte dipende molto dal periodo di rotazione.
+
+\item In realtà la temperatura di un pianeta può essere molto diversa (anche più alta) a causa dell'atmosfera (e quindi dell'effetto serra). 
+
+\item Perché un oggetto in orbita attorno al Sole la cui forma è dominata dalla propria gravità (e rotazione) possa essere definito pianeta è necessario che abbia ripulito la propria orbita. Plotone e Eris non soddisfano a questo requisito. Sono ritenuti pianeti nani.
+
+\item Alcune peculiarità sui pianeti: Plutone e Eris hanno orbite particolarmente eccentriche e inclinate rispetto agi altri pianeti. Anche l'orbita di Mercurio è più eccentrica di quella degli altri pianeti. Mercurio e Venere presentano le orbite più inclinati tra i pianeti (rispetto all'eclittica).
+
+\item Ricordiamo il fatto interessante della coorotazione completamente sintonizzata di Plutone e del suo satellite Caronte.
+
+\item I corpi minori del sistema solare sono tutti gli altri oggetti che non sono pianeti. Essi danno informazioni sulla formazione del sistema solare e sulla sua evoluzione dinamica. Inoltre il loro elevato numero permette un approccio di tipo statistico.
+
+\item Fra Marte e Giove si trovano gli \textbf{asteroidi} di cui $1$ Ceres è il più grande esponente (con un diametro di $1000$km). Esso possiede $\frac{1}{10}$ della massa di tutta la fascia asteroidale. Gli asteroidi producono immagini puntiformi e sono osservati mediante tecniche di speckle-interferometry e tecniche di occultazione. Gli asteroidi sono la fonte dei meteoriti. L'analisi spettrale distingue $14$ classi di asteroidi di cui le più importanti sono $C$ (le contriti carbonitiche, che corrispondono alle meteoriti scure) e la classe $S$ (dei silicati).
+
+\item La fascia principale è spopolata nelle vicinanze di Giove, inoltre vi sono delle orbite prive di asteroidi chiamate \textbf{lacune di Kirkwood} a causa degli effetti di risonanza con l'orbita di Giove (periodi in frazioni semplici), che cumulano gli effetti dinamici.
+
+\item Distinguiamo anche gli asteroidi Troiani collocati sull'orbita di Giove a $\pm 60°$ rispetto ad esso (punti di Lagrange L$4$ e L$5$)
+
+\item I meteoriti provengono dai NRE (\textit{Near Earth Object}) cioè asteroidi che intersecano l'orbita della Terra. 
+
+\item Le \textbf{comete} sono oggetti dalle orbite molto eccentriche e grandi periodi (da decine di anni a milioni). E' difficile calcolare l'orbita di una cometa quando devia dal caso kepleriano. Le comete sono originarie del disco diffuso, una zona che si trova tra la fascia degli asteroidi e i TNO (\textit{Trans Neptunian Object}). Le interazioni con i pianeti massivi le portano su orbite interne più vicine al Sole (dove compare la coda). Le orbite delle comete possono arrivare anche fino alla nube di Oort ($10^5$UA).
+
+\item Tra Giove e Nettuno ci sono i Centauri (questa zona è instabile). Oltre Nettuno ci sono i TNO, che costituiscono la \textbf{fascia di Kuiper}  (essa è una zona stabile). Sono in questa fascia i Plutini, cioè oggetti che hanno una risonanza 3:2 con Nettuno.
+
+\item Gli oggetti più esterni (comete che arrivano alla nube di Oort) possono essere influenzati dal passaggio di una stella. Si stima che questo succeda ogni $100$ milioni di anni. Questo incontro può anche consentire uno scambio di comete.
+
+\item La fasci di Kuiper a differenza della fascia degli asteroidi è popolata prevalentemente da oggetti composti di sostanze volatili congelate, come ammoniaca, metano e acqua. Essendo dinamicamente stabile essa non è l'origine delle comete anche se è costituita da corpi con la stessa composizione delle comete.
+
+\item La nube di Oort è costituita da comete con grande eccentricità. E una specie di deposito di comete, che dista $1$a.l. dal Sole.
+\end{itemize}
+
+\section{Sistemi planetari extrasolari}
+\begin{itemize}
+\item Fatto curioso: la stella di Barnard (una nana rossa nell'Ofiuco) è stata in passato scambiata per un pianeta a causa del grande moto proprio, ben $10 \frac{''}{\text{year}}$.
+
+\item I metodi diretti per la rilevazione dei pianeti extrasolari sono difficili: per esempio si consideri che la distanza angolare tra Giove e il Sole sarebbe già solo $1''$ per una distanza di $5$pc. Inoltre esiste un problema di contrasto tra la luce della stella (ché è usualmente diffusa su un disco) e quella del pianeta, che viene quindi mascherata: $\frac{L_{p}}{L_S} = p(\lambda, \alpha) \left( \frac{R_p}{r_{pS}} \right) ^{2}$. Per il sistema Terra-Giove questo rapporto è $10^{-9}$.
+
+\item Le osservazioni spaziali aumentano le possibilità di osservazioni dirette, essendo l'immagine della stella data dal limite di diffrazione e non dal seeing. Sono utilizzate anche tecniche coronografiche (si scherma la luce della stella). Esiste anche il \textit{nulling}, grazie al quale la luce della stella viene eliminata per interferenza distruttiva, ma non quella del pianeta.
+
+\item Con tecniche dirette (di imaging) sono meglio visibili i pianeti lontani. Essi hanno fornito molte osservazioni di \textit{brown-dwarf} (cioè di pianeti con  $M > 13 M_{J}$ che possono supportare qualche forma di reazione termonucleare), di \textit{debris disk} e dischi di polvere.
+
+\item Le prime rivelazioni sono di pianeti attorno alle pulsar millisecondo (1992). L'orbita di un pianeta porta la pulsar a descrivere una piccola ellisse (sovrapposta al moto proprio) quindi si osserva un anticipo o ritardo del segnale dell'ordine del millisecondo (dovuto alla differente distanza che il segnale deve percorrere per arrivare a noi sui vari  punti dell'orbita). 
+
+\item Questi sistemi di pulsar si sono probabilmente formatisi dopo l'esplosione a supernova, quindi non forniscono informazioni sulla formazione dei sistemi planetari di interesse.
+
+\item Esiste il microlensing gravitazionale (indiretto). Si sfrutta una stella intermedia come lente gravitazione e si osserva la luce dell'anello di Einstein deflessa dalla stella lente. Se la sorgente ha un pianeta è possibile osservare un anello disomogeneo che indica la presenza di pianeti. Permette di osservare pianeti anche delle dimensioni della Terra e lontani $10$kpc. Tuttavia richiede numerose osservazioni perché il fenomeno della lente gravitazionale è molto improbabile.
+
+\item Si possono cercano i pianeti con le stesse tecniche con le quali si studiano le stelle binarie. Dunque si osserva il moto Kepleriano di una stella dovuto al pianeta. L'angolo (in millisecondi d'arco) che sottende l'orbita di una stella (di periodo $P$) con un pianeta di massa $m_p$ è $\theta = \frac{m_p}{r} \left( \frac{P}{M_{S}} \right)^{\frac{2}{3}}$. Questo metodo è usato per scoprire sistemi vicini. Per il sistema Sole-Giove anche a pochi parsec lo spostamento è di pochi millisecondi d'arco. Pertanto si punte sulle misure spaziali (Gaia e l'interferometro SIM).
+
+\item Con tecniche spettroscopiche si misura l'effetto Doppler dovuto alla velocità orbitale della stella (intorno al comune centro di massa pianeta-stella) . Da questo si ricava $a_{S} \sin(i)$ cioè l'asse maggiore dell'orbita della stella (a meno di un angolo). Se il sistema è anche fotometrico (presenta eclissi) si trova l'angolo di inclinazione dell'orbita. Si ricavano poi le masse di stella e pianeta, insieme al semiasse maggiore dell'orbita del pianeta. 
+
+\item La velocità del Sole è $12 \si{\frac{\meter}{\second}}$ per il sistema Sole-Giove. Questa velocità è misurabile dagli spettrografi moderni (sensibili fino a $1 \si{\frac{\meter}{\second}}$). Tuttavia si ritiene che non si possa scendere sotto questo limite a causa delle turbolenze della superficie stellare.
+
+\item La scoperta di un pianeta può avvenire per via fotometrica: osservandone il transito davanti alla sua stella. Questo pone una selezione sull'angolo di osservazione, sulla distanza distanza ($\frac{R_S}{r_{pS}}$), sulle dimensioni e sul periodo che non deve essere troppo lungo per poter vedere almeno un transito. A titolo di esempio il passaggio di Giove causa una diminuzione della luminosità del Sole di $10^{-2}$, mentre il passaggio della Terra provoca una diminuzione relativa della luminosità di $10^{-4}$. Quest'ultimo effetto non può essere visto da Terra, ma la missione spaziale Kepler ha riscontrato un grande successo nel rilevate pianeti anche delle dimensioni della Terra.
+
+\item La maggioranza dei sistemi planetari osservati è costituito da pianeti aventi massa $\sim M_J$ e con orbite interne a quella gioviana (spesso interne anche a quella terrestre).
+
+\item Una nota interessante è l'assenza di pianeti con massa significativamente superiore a quella gioviana. Indicando che vi è una discontinuità nei processi che portano alla formazione di stelle binarie e di sistemi planetari.
+
+\item La teoria di formazione dei pianeti alla Safronov prevede il collasso di masse di polvere e detriti di un disco planetario. Questo suggerisce che le stelle di maggiore metallicità possono avere più facilmente pianeti. Ciò è supportato dalle evidenze ma non è sicuro quale sia la freccia.
+
+\item La teoria di formazione di pianeti all'interno del sistema solare prevede la formazione di giganti gassosi ad una certa distanza dalla stella. Questo apparentemente contraddice le osservazioni. In realtà la teoria dei Jumping Jupiter potrebbe spiegare questa discrepanza. JJ prevede orbite strette e eccentriche mentre le ipotesi mareali darebbero orbite circolari. E' necessario vedere se il dato permarrà una volta eliminati gli effetti di selezione sui pianeti osservabili e aumentata la statistica.
+\end{itemize}
+
+\section{L'universo extragalattico}
+\begin{itemize}
+\item Hubble dimostra che alcuni degli oggetti estesi sono galassie (scopre variabili Cefeidi in Andromeda ed in altre galassie a spirale). Altri oggetti nebulosi sono le nubi di polvere interne alla galassia (hanno dimensioni angolari simili).
+
+\item La relazione periodo-luminosità delle Cefeidi ($L \propto t^{\frac{4}{3}}$) permette di stimare la distanza delle galassie.
+
+\item La brillanza della minima regione risolvibile di una galassia (misurata in magnitudini su secondo d'arco quadrato) è indipendente dalla distanza della galassia.
+
+\item Si può stimare la brillanza tipica di una galassia e risulta essere $\sim 22$ magnitudo per secondo d'arco quadro. Le Cefeidi devono almeno avere questa luminosità per essere distinte.
+
+\item Una stella Cefeide a $10 	\text{Mpc}$ di distanza che ha magnitudo relativa $22$ deve avere una magnitudo assoluta di $-8$. Devono essere visibili le singole oscillazioni della singola stella. Le Cefeidi possono arrivare anche a $M = -5$. 
+
+\item Nelle osservazioni da Terra la risoluzione angolare è di circa $1''$ d'arco. Questo valore si può diminuire (anche di un fattore $10$) per osservazioni dallo spazio.
+
+\item Oltre all'uso delle Cefeidi con relazione periodo-luminosità nota esistono varie ipotesi che si possono fare per stimare la distanza di una galassia:
+
+\begin{enumerate}
+\item In ogni galassia la stella \textbf{variabile} più luminosa di una galassia ha la stessa magnitudo $M_V$. Se vi è una supernova (luminose spesse tanto quanto l'intera galassia) possiamo ipotizzare la sua luminosità e calcolare la distanza conseguentemente.
+Con queste ipotesi di arrivano ai Mpc di distanza.
+\item In ogni galassia la stella più luminosa ha la stessa magnitudo $M_V$. Si arriva a decine di Mpc.
+\item Un salto qualitativo nelle distanze misurabili si può fare assumendo che tutte le galassie abbiano la stessa luminosità.
+\item Le galassie più luminose di un cluster hanno la stessa luminosità (in genere non si scegli la più luminosa).
+\end{enumerate}
+
+\item Un altro metodo di misura delle distanze è basato sulla misura della dispersione delle velocità delle stelle (mediante tecniche Doppler). Le velocità sono legate alla massa (attraverso il teorema del viriale) quindi alla luminosità. Per grandi oggetti vale il limite di Eddington $L \propto M$.
+
+\item Un altro potente metodo di misura delle distanze è la legge di Hubble (che collega distanze con velocità di recessione). Per poterlo applicare bisogna tuttavia che il moto proprio sia trascurabile e che esso sia la più importante fonte di effetto Doppler.
+
+\item Classificazione delle galassie (di Hubble):
+\begin{enumerate}
+\item Ellittiche (\textbf{E}), ulteriormente caratterizzate da un numero che indica il rapporto degli assi apparenti dell'ellisse di proiezione: $n = 10 \left( 1 - \frac{b}{a} \right)$.
+\item Lenticolari (\textbf{S0}), hanno una struttura esterna appiattita, sono intermedie tra le ellittiche e le spirali. La luminosità decresce più lentamente lontano dal centro rispetto alle galassie a spirale. Si distinguono in normali e barrate.
+\item Spirali (\textbf{S}), hanno una struttura a disco articolata in braccia di maggiore densità stellare. Possono anche loro essere normali o barrate. Le galassie a spirale vengono poi classificate secondo una lettera aggiuntiva a, b, c,... a seconda dell'apertura delle spirali (della loro distanza dal nucleo).
+\end{enumerate}
+
+\item Si può ampliare la classificazione introducendo le galassie irregolari (I) e le spirali di transizione con le irregolari (Sd o Sm). Le galassie spirali possono poi essere ulteriormente suddivise in Sr Ss a seconda che le spirali partano da un anello circumnucleare o meno.
+
+\item Il criterio di classificazione di Yerkes prevede un primo indicatore (una lettera) che è il tipo spettrale integrato seguito da alti indicatori di forma (concentrazione del nucleo) e di rapporto tra assi.
+
+\item Le galassie non possono essere considerate come oggetti all'equilibrio. Infatti il cammino libero medio di una stella in una galassia è $10^{14}$pc e il tempo medio tra due collisioni $10^{18}$ anni, molto maggiore dell'età dell'Universo.
+
+\item Spettroscopia delle galassie: il colore di una galassia è il colore medio di tutte le componenti che ne fanno parte (più arrossamento dovuto a polveri interstellari). Le ellittiche hanno un colore integrato che corrisponde più o
+meno a quello di stelle di tipo K mentre le spirali sono intorno al tipo F e le irregolari al tipo A.
+Le irregolari abbondano di stelle giovani e blu mentre nelle ellittiche i processi recenti sono scarsi.
+
+\item Le galassie ellittiche si sono formate all'inizio dell'universo e sono dominate da stelle vecchie (rosse). Le galassie irregolari possono essere di formazione molto recente.
+
+%\item Le galassie ellittiche hanno spettri medi di tipo K, quelle spirali di tipo F e le irregolari sono di tipo A. Queste differenza si spiega sulla base della presenza di processi di recente formazione stellare (abbondanti nelle irregolari), scarsi nelle ellittiche.
+
+\item Le galassie ellittiche sono chiamate \textit{early}, mentre le galassie \textit{late} contenono stelle più giovani.
+
+\item Le velocità delle stelle nelle galassie sono dell'ordine di $100 \si{\frac{k \meter}{\second}}$ questo introduce un allargamento Doppler nelle righe di assorbimento (della galassia), che in generale sono la somma delle righe di ogni stella.
+
+\item Si possono metter in relazione il profilo di brillanza ($\mu$) di una galassia con la distribuzione di velocità. La brillanza è definita in unità di $\frac{\text{magn}}{\text{sec}^2}$. Nelle zone centrali questa può arrivare anche a $17$. Un brillanza media è $22$. A $\mu = 26$ la galassia si confonde con il fondo cielo (dovuto principalmente alla luce diffusa del Sole). Si può definire il raggio di una galassia come quello dell'isofota a $26.5$ di magnitudo (raggio di Holmberg).
+
+\item Si può costruire la densità in massa delle stelle (cioè introdurre il numero di stelle per intervallo di massa): $dn = n(m) dm$. Da questa ricavare la luminosità totale: $L_{tot} = \int L(m) n(m) dm$. Supponendo che $L \propto m^3$ e $n \propto m^{-\gamma}$ abbiamo $L_{tot} \propto n^{4 - \gamma}$. Se $\gamma \ll 4$ la luminosità è dominata dalle stelle di grande massa.
+
+\item La luminosità totale viene stimata per integrazione del profilo di brillanza. Dalla conoscenza della distanza si ricava la magnitudo assoluta: circa $-10/-15$ per le galassie nane e $-20/-25$ per quelle giganti.
+
+\item Dalla luminosità si può ricavare la massa (attraverso il limite di Eddington) e da questa la densità.
+
+\item Per un oggetto esteso la conoscenza del campo di velocità tramite l'effetto Doppler può fornire molte informazioni sulla struttura e l'evoluzione.
+
+\item Si può fittare il profilo di brillanza delle galassie. In particolare la brillanza delle galassie ellittiche nane sono ben approssimate dalle curve di King (derivate funzione logistica).
+
+\item In generale si sono proposte curve teoriche basati su ipotesi di densità del gas di stelle, tutte sostanzialmente dipendenti da tre parametri:
+\begin{itemize}
+\item La brillanza centrale $\Sigma_0$.
+\item Il raggio del nucleo $r_c$ definito come il punto in cui $\Sigma(r_c) = \frac{\Sigma_0}{2}$. 
+\item $c = \log \left( \frac{r_T}{r_c} \right)$ dove $\Sigma (r_T) = 0$. $c$ indica la velocità con cui la brillanza va a $0$.
+\end{itemize}
+
+\item Per quanto riguarda le ellittiche giganti si è proposta la formula di Vaucouleurs: 
+\begin{equation}
+\Sigma (r) = 10^{-3.33 \left[ \left( \frac{r}{r_e} \right) ^{\frac{1}{4}} - 1 \right]}
+\end{equation}
+dove $r_e$ è la mediana della brillanza. $\Sigma_0 = 2000 \Sigma(r_e)$.
+
+\item Per quanto riguarda le galassie a spirale bisogna considerare due contributi: quello del nucleo (formula di Vaucouleurs) e quello del disco che ha un andamento esponenziale: $\Sigma(r) = \Sigma(r_s) e^{-\frac{r}{r_S}}$. Si può definire il rapporto la luminosità del disco e quella del nucleo (\textit{bulge}): 
+\begin{equation}
+\frac{D}{B} = 0.28 \left( \frac{r_s}{r_e} \right)^{2} \frac{\Sigma (r_s)}{\Sigma (r_e)}
+\end{equation}
+
+\item Radiogalassie e quasar: Le QSO (quasi stellar object) sono oggetti luminosissimi e a grande distanza caratterizzati da una intensità attività di emissione radio. Spesso i quasar sono nuclei galattici attivi che emettono nella radiofrequenza a causa di campi elettromagnetici presenti in esse che causano l'emissione di radiazione di sincrotrone. Nel dopoguerra lo sviluppo di tecniche interferometriche a lunga base a permesso lo sviluppo della radioastronomia.
+
+\item Non sempre l'emissione radio è correlata con l'emissione ottica.
+
+\item le quasar si distinguono dalle stelle per un eccesso di ultravioletto e infrarosso. Esse hanno un altissimo redshift cosmologico (dovuto alla distanza).
+
+\item I quasar possono anche essere nuclei galattici in cui il disco di accrescimento intorno al buco nero supermassiccio centrale causa l'emissione spropositata di energia (ordine di $10^{14}$ luminosità solari). Sono gli oggetti più luminosi dell'Universo.
+
+\item \textbf{Cosmologia}: l'Universo è omogeneo e isotropo su grande scala. La legge di Hubble lega la velocità di allontanamento di un oggetto con la sua velocità radiale: $v = Hd + \Phi$. Dove $\Phi$ è il contributo di velocità peculiare dato dal moto proprio. Il valore stimato di $H$ è $60-70 \si{\frac{\kilo \meter}{\second \cdot \text{Mpc}}}$. Questo valore fornisce una scala per definire gli oggetti come vicini o lontani in senso cosmologico.
+
+\item Le velocità peculiari degli oggetti extragalattici non superano mai i $1000 \si{\frac{k \meter}{\second}}$ quindi è facile arrivare a osservare oggetti distanti in cui domina il redshift cosmologico.
+
+\item Le disomogeneità sono organizzate in cluster (Mpc), supercluster ($10$Mpc), filamenti, superfici e grandi vuoti.
+
+\item Importante per studiare la struttura dell'Universo primordiale è la radiazione cosmica di fondo che permea l'universo da quando la materia è diventata trasparente alla radiazione. Questo momento corrisponde a una dimensione dell'universo $1000$ inferiore a quella attuale. Vedi anche superficie di ultimo scattering. La radiazione di fondo presenta delle disomogeneità che portano informazioni sulla formazione delle strutture primordiali nell'Universo. La temperatura attuale della radiazione è $2.7\si{\kelvin}$ a causa del redshift.
+\item Possiamo definire la funzione di correlazione a due punti $\epsilon(r)$ come 
+\begin{equation}
+dP^2 = n^2 \left[ 1+\epsilon(r) \right] dV_1 dV_2
+\end{equation}
+dove $dP^2$ è al probabilità di trovare una galassia in  $dV_1$ e $ dV_2$. La funzione $\epsilon(r)$ tende a $-1$ per $r \rightarrow +\infty$.
+
+\item Le galassie risultano clusterizzate con una legge $\epsilon (r) = \left( \frac{r}{r_0} \right) ^ {-\gamma}$, con $r_0 = 5 \text{Mpc}$ e $\gamma = 1.8$. Anche gli ammassi di galassie risultano a loro volta clusterizzati in superammassi con la stessa legge e una dimensione caratteristica di $25$Mpc.
+
+\item Il test di percolazione permette di stabilire l'esistenza di strutture a filamento e a membrana.
+Si definisce il raggio di percolazione $r$ come il minimo dei massimi raggi di sfere da costruire intorno alle galassie perché esista un percorso connesso passante attraverso le sfere che vada da una parte all'altra della regione di Universo considerata.
+
+\item Per una ragione di spazio uniformemente popolata da galassie $r \propto n^{-\frac{1}{3}}$ dove $n$ è la densità media delle galassie. Mentre se vi è clusterizzazione il raggio è maggiore, se vi sono strutture a filamento il raggio è minore.
+
+\item L'osservazione che le velocità nei cluster (e delle stelle estremali della galassia) non corrispondevano a quanto previsto ha portato all'ipotesi della materia oscura.
+
+\item Il modello di Universo omogeneo e isotropo possiede (in prima approssimazione) la metrica di Friedmann:
+\begin{equation}
+ds^2 = c^2 dt^2 - a^2(t) \left[ \frac{dr^2}{1+k r^2}+ r^2 \left( d\theta^2 + \sin^2 \theta d\phi^2 \right) \right]
+\end{equation}
+$k=-1,0,+1$ definiscono un Universo aperto, piatto o chiuso.
+
+\item La teoria dello stato stazionario prevede una densità di massa costante per l'Universo, per conciliare ciò con la legge di Hubble si deve supporre che via sia una continua creazione di materia ($1$ atomo di $H$ per milione di anni per $m^3$). Questa teoria è comunque in contrasto con l'osservazione della radiazione cosmica di fondo.
+
+\item Scriviamo le equazioni Einstein per la metrica di Friedmann in presenza del tensore energia impulso della materia (caratterizzato da $\rho$ e $P$):
+\begin{equation}
+\begin{cases}
+\dot{a}^{2} + k c^2 = \frac{8 \pi}{3} \rho G a^2 \\
+\ddot{a} = -\frac{4 \pi G}{3} \left( \rho + \frac{3P}{c^2} \right) a 
+\end{cases}
+\end{equation}
+
+\item Possiamo ipotizzare che $P = \alpha \rho c^2$ per diversi tipi di materia nell'Universo. La pressione nelle equazioni di Einstein corrisponde a un comportamento relativistico della materia.
+
+\begin{itemize}
+\item Per un modello a polvere la pressione è trascurabile $\alpha \sim 0$.
+\item Per la radiazione $\alpha = \frac{1}{3}$.
+\item Per la costante cosmologica $\alpha = -1$, $P = - c^2 \rho$.
+\end{itemize}
+
+\item Un parametro $\alpha$ positivo provoca la  decelerazione dell'espansione dell'Universo ($\ddot{a} < 0$). Questo causa una singolarità per $t = 0$ (in cui $a = 0$) che è il Big-Bang.
+
+\item La densità di energia della materia decresce come $\rho_{m} \propto a^{-3}$ e quella della radiazione come $\rho_{m} \propto a^{-4}$ (a causa del redshift). La costante cosmologica ha $\rho \propto a ^{0}$. 
+
+\item Un Universo in espansione accelerata potrebbe non avere la singolarità del Big Bang.
+
+\item L'Universo è passato attraverso due fasi prima di quella attuale: una fase dominata dalla radiazione, una dominata dalla materia non relativistica e ora si trova in una fase di espansione accelerata a causa della costante cosmologica.
+
+\item Durante l'Universo dominata dalla radiazione sono avvenute reazioni di fusione che hanno portato alla formazione di elio cosmologico, carbonio e in misura minore di altri metalli. Per spiegare tuttavia la maggiore metallicità delle stelle di popolazione II rispetto a quanto atteso si è ipotizzata un generazione di stelle ancora più antica (popolazione III) molto massicce ($200M_S$) dalla vita molto breve che hanno aumentato lo $Z$ della materia.
+
+\item Il raffreddamento porta poi a una condizione in cui l'energia cinetica delle particelle è trascurabile rispetto alla loro massa a riposo (fase dominata dalla materia non relativistica). Essa è tuttavia ancora prevalentemente plasma ionizzato così che le interazioni radiazione-materia mantengono le due componenti all'equilibrio termico.
+
+\item La temperatura cala fino a $10^4 \si{\kelvin}$, qui essa si ricombina e diventando neutra. Cala la sezione d'urto della materia e della radiazione che quindi si separano. Le temperature diventano indipendenti, entrambe evolvono secondo la loro legge di espansione adiabatica (con indici $\frac{5}{3}$ e $\frac{4}{3}$ rispettivamente per la materia e la radiazione).
+
+\item La radiazione cosmica di fondo (ora redshiftata) può fornire informazioni sui modelli di espansione e sulla distribuzione di materia (e quindi sulla formazione di strutture) alla superficie di ultimo scattering (luogo di punti di ultima interazione con la materia). 
+
+\item Uno dei problemi cosmologici più interessanti è il problema dell'orizzonte . Esso consiste nel fatto che la radiazione di fondo proveniente da zone di Universo che non sono mai state in contatto causale tra loro si trovano invece termalizzate. Per risolvere questo ad altri problemi si ipotizza l'inflazione.
+
+\item L'inflazione prevede che vi sia stata in passato una fase di espansione estremamente rapida dovuto a un termine di pressione di tipo costante cosmologica.
+
+\item Nel modello di Friedmann si definisce $H = \frac{\dot{a}}{a}$ che è la costante di Hubble e misura l'attuale rate di espansione dell'Universo. Inoltre definiamo l'accelerazione $q = \frac{\ddot{a} a}{\dot{a}^2}$. Per $q < 0$ si ha una fase di decelerazione mentre per $q > 0$ si ha accelerazione.
+
+\item Si possono riscrivere le equazioni di Friedmann in termini della densità adimensionale $\Omega = \frac{\rho}{\rho_c}$ con $\rho_c = \frac{3 H^2}{8 \pi G}$. Questo parametro definisce se l'Universo è chiuso, piatto o aperto. Le recenti osservazioni suggeriscono che l'Universo sia piatto tuttavia non si si riescono a spiegare le densità misurare di materia. Risulta infatti:
+\begin{equation}
+\Omega = \Omega_b (= 0.07) + \Omega_{dm} ( = 0.20) + \Omega_{de} (=0.73)
+\end{equation}
+
+\item E' anche un problema interessante capire il perché del \textit{fine-tuning} che porta a $\Omega = 1$.
+
+\end{itemize}
+
+\section{Meccanica celeste}
+
+\begin{itemize}
+
+\item Perché in un potenziale centrale $V(r) = \frac{k}{r^{\alpha}}$ le orbite circolari siano stabili deve essere $\alpha < 2$ (dal potenziale efficace).
+
+\item Il teorema di Bertrand ci assicura che gli unici potenziali centrali che forniscono orbite chiuse sono $\frac{1}{r}$ e $r^2$. Entrambe le orbite sono ellittiche.
+
+\item Ricordiamo alcune formule utili relative al moto ellittico: $h = \dot{\theta} r^2$, $r = \frac{h^2}{GM \left[ 1 + \cos \left( \theta-\theta_0 \right) \right]}$, $h^2 = GM a(1-e^2)$, $b = \sqrt{1-e^2} a$. $h$ è la velocità areolare: $T = \frac{2 \pi a b}{h} = 2 \pi \sqrt{\frac{a^3}{GM}}$, $n = \frac{2 \pi}{T}$ è chiamato moto medio: $n^2 a^3 = GM$. $E = - \frac{GMm}{2a}$. Ricordiamo l'eccentricità $e$ in funzione di $h$ e $E$: $e^2 = 1 - \frac{2 h^2 E}{m G^2 M ^2}$. Definiamo l'anomalia vera: $f = \theta - \theta_0$ e calcoliamo le velocità radiali e ortogonali: $v_t = \frac{GM \left( 1 + \cos f \right) }{h}$, $v_r = \left( \frac{GM}{h} \right)^2 \left( 1 + e^2 + 2 e \cos f \right)$
+
+\item L'\textbf{equazione di Keplero} permette di ottenere l'equazione oraria, per essa è fondamentale la definizione di anomali eccentrica $u$. Costruiamo il cerchio in cui l'ellisse è inscritta allora $u$ e l'angolo tra il semiasse maggiore e la semiretta tra il centro dell'ellisse e la proiezione del pianeta sul cerchio.
+
+\item L'anomalia vera è l'angolo compreso tra il perielio dell'orbita e la posizione attuale del corpo. Di fatto è l'angolo tra $\vec{r}$ e il vettore di Lenz.
+
+\item L'anomalia media è il tempo (misurato in angolo) trascorso dall'ultimo passaggio al perielio del corpo: $M = n (t-t_0)$ dove $n = \frac{2 \pi}{T}$. Vale l'equazione di Keplero: 
+\begin{equation}
+M = u - e \sin (u)
+\end{equation}
+
+\item Si può legare $u$ a $f$ tramite $\tan \left( \frac{f}{2} \right) = \sqrt{\frac{1+e}{1-e}} \tan \left( \frac{u}{2} \right)$. Dunque conoscendo $M$ (che si può ricavare da $a$ per esempio) e l'eccentricità si ricava numericamente l'equazione del moto.
+
+\item Punto $\gamma$: punto vernale, punto d'Ariete. Posizione del Sole all'equinozio di primavera. E' il punto in cui l'eclittica (piano orbitale della Terra) incontra l'equatore celeste, che è la proiezione dell'equatore terrestre sulla volta celeste.
+
+\item Data l'anomalia media $M = n(t-t_0)$, essa permette di calcolare $f(t)$ (l'anomalia vera). Al tempo $t = 0$ $M = -n t_0$, si specifica il punto dell'orbita in cui si trova il pianeta a $t = 0$ fornendo $f(0)$. Dati anche l'eccentricità $e$ e l'asse maggiore $a$, per definire l'orbita di un pianeta servono altri $3$ angoli che individueremo negli \textbf{elementi orbitali}. Essi sono:
+\begin{itemize}
+\item La longitudine del nodo ascendente $\Omega$, che è l'angolo tra il punto $\gamma$ e l'intersezione tra l'orbita e l'eclittica (che è il piano orbitale della terra).
+\item L'inclinazione $I$ dell'orbita sul piano dell'eclittica.
+\item L'argomento del pericentro $\omega$ che è l'angolo tra la linea dei nodi e il punto si pericentro sull'orbita.
+\end{itemize}
+
+\item Le coordinate celesti sono altezza e azimut, sono misurate rispetto all'orizzonte e al meridiano locale.
+
+\item Ogni osservazione astronomica fornisce 2 informazioni (altezza e azimut), per fornire 6 parametri (eccentricità, semiasse, anomalia vera iniziale e gli elementi orbitali) sono necessarie almeno 3 osservazioni.
+
+\item Si può studiare l'evoluzione delle orbite nel sistema solare supponendo che esse siano sempre kepleriane (\textbf{orbita osculante}) con gli elementi orbitali che variano lentamente nel tempo. $a(t)$, $I(t)$ e $e(t)$ oscillano intorno a una posizione di equilibrio. Mentre $\Omega(t)$ e $\omega(t)$ circolano con periodi molto lunghi (precessione).
+
+\item Chiamiamo \textbf{problema ristretto dei tre corpi} quello in cui la massa di uno dei tre corpi è molto minore della massa dei primi due. Consideriamo il problema nel sistema di riferimento sinodico delle due stelle massive rotanti.
+
+\item E' possibile definire una quantità conservata $J$ chiamata costante di Jacobi (analoga all'energia). Chiamiamo $\mu$ and $1-\mu$ le masse normalizzate dei corpi più pesanti, $\dot{x}$, $\dot{y}$, $\dot{z}$ sono le velocità della massa piccola nel sistema di riferimento sinodico dunque scriviamo:
+\begin{equation}
+J = \frac{1}{2} \left( \dot{x}^2 + \dot{y}^2 + \dot{z}^2 \right) + W(x, y, z) = \frac{1}{2} \left( \dot{x}^2 + \dot{y}^2 + \dot{z}^2 \right) -\frac{x^2+y^2}{2} -\frac{\mu }{r_{13}} - \frac{1-\mu }{r_{23}}
+\end{equation}
+
+\item Il luogo di punti in cui $\vec{v} = 0$ si chiama superficie di Hill.
+
+\item Vi sono due punti in cui $\vec{\nabla} W = 0$ che costituiscono due triangoli equilateri con le masse $M_1$($\mu$) e $M_2$($1-\mu$), questi due punti di massimo sono detti punti troiani e sono stabilizzati dalla forza di Coriolis. I punti troiani sono anche chiamati L$4$ e L$5$. 
+
+\item Vi sono altri tre punti lagrangiani sull'asse che collega $M1$ e $M2$. Essi sono punti di massimo per $W(x)$ ristretto alla congiungente. 
+
+\item L$1$ e L$2$ sono i due punti lagrangiani centrati attorno al corpo $M_2$ (di massa minore). La distanza tra questi due punti definisce il raggio di Roche (o di Hill) che è la regione di influenza di $M_2$ rispetto a $M_1$. In particolare in questa zona si può avere cattura.
+\begin{equation}
+r = a \left( \frac{M_2}{3 M_1} \right)^{\frac{1}{3}}
+\end{equation}
+dove $a$ è la distanza dei due corpi $M_1$ e $M_2$. Per alti valori di $J$ i lobi di influenza delle due stelle possono essere collegati e allora si può avere scambio di massa.
+
+\item E' importante non confondere il raggio di Hill con il raggio di Roche. Il primo ha a che fare con la zona di influenza di una stella rispetto alla gravità di un'altra stella orbitante. Il secondo è indicativo della minima distanza a cui si più formare un satellite autogravitante senza che venga distrutto dalle forze di marea.
+
+\item E' possibile costruire \textbf{l'invariante di Tisserand} dall'invariante di Jacobi. Questo nuovo oggetto permette di studiare gli incontri ravvicinati di un oggetto celeste con un pianeta e di riconoscere la comune origine dinamica di due osservazioni differenti. Per scrivere questo invariante passiamo a coordinate inerziali.
+
+\item Consideriamo il moto di una cometa intorno al Sole e a Giove. Considerando la cometa come sempre lontana dall'incontro con Giove abbiamo la seguente quantità conservata:
+\begin{equation}
+T = \frac{a_G}{a_c} + 2 \cos I \sqrt{\frac{a_c \left( 1 - e_c^2 \right)}{a_G}}
+\end{equation}
+
+\item In un incontro ravvicinato con Giove $T$ varia di molto ma poi ritorna ai valori di partenza. In un incontro ravvicinato possiamo calcolare la velocità relativa tra Giove e la cometa che è: $v_{rel}^{2} = \frac{GM_S \left( 3 - T \right)}{a_G}$. Per la Terra $T = 4.4$ dunque non ci sono mai stati contatti ravvicinati con Giove. 
+
+\item Se il corpo interagisce con più di un pianeta $T$ non è un parametro affidabile.
+
+\item Consideriamo $3$ pianeti intorno al Sole posti a distanze linearmente crescenti. L'evoluzione temporale porterà uno de tre pianeti ad allontanarsi su di un'orbita esterna e un altro ad avvicinarsi su un orbita interna. Per pianeti di tipo gioviano il pianeta sull'orbita interna può arrivare fino all'orbita di Marte. Questo scenario è chiamato \textbf{Jumping Jupiter}. L'orbita del pianeta interno diventa molto eccentrica.
+
+\item Passando per Cauchy-Schwarz si può dimostrare la disuguaglianza di Easton:
+\begin{equation}
+I V^2 \ge 2 J^2 |E_{tot}|
+\end{equation}
+
+\item Calcolando il minimo di $IV^2$ è possibile ottenere un risultato di stabilità delle configurazioni in cui tre masse di trovano ai vertici di un triangolo equilatero.
+
+\item Inoltre sempre grazie alla disuguaglianza di Easton è possibile dimostrare la stabilità delle configurazioni gerarchiche in cui due masse sono molto vicine (punti di massimo per $IV^2$). Per $J$ grande si ha questo tipo di configurazioni e passare da una all'altra richiede il superamento di una barriera. Ciò è reso impossibile dalla disuguaglianza di Easton.
+
+\item \textbf{Teoria delle perturbazioni} per gli elementi orbitali: data una forza esterna $\vec{F}$ possiamo esprimerla in componenti in una terna cartesiana aventi versori radiale, tangente alla traiettoria e ortogonale al piano dell'orbita. $\vec{F} = R \hat{r} + T \hat{t} + W \hat{w}$. Scriviamo le equazioni per le variazioni di $e$, $a$ e $I$:
+\begin{gather}
+\frac{d a}{d t} = \frac{2 a}{h^2} \left[ R e \sin f + T \left( 1 + e \cos f \right) \right] \rightarrow \frac{2 T}{n}\\
+\frac{d e }{ d t} = \frac{R \sin f + 2 T \cos f}{n a} \\
+\frac{d I}{d t} = W \frac{\sqrt{1 - e^2} \cos (f + \omega)}{n a ( 1 + e \cos f )}
+\end{gather}
+
+\item Possiamo anche considerare processi impulsivi e quindi variazioni finite $\Delta a$ e $\Delta v_{r}$, in particolare se $f = 0$ (ovvero sul punto di perielio) le perturbazioni di $a$ e di $e$ sono legate da $\Delta e = \frac{\Delta a}{a}$.
+
+\item In generale vale un'equazione del tipo $\frac{d c_i(t)}{dt} = f_i \left( c_j(t), t \right)$ per gli elementi orbitali nel caso di azione di una perturbazione. Le funzioni citate possono essere ricavate dalle equazioni di Lagrange (si usano parentesi di Poisson per calcolare la derivata).
+
+\item La variazione relativa di $a$ è proporzionale a $\frac{T}{GM/a^2}$.
+
+\item In genere possiamo esprimere la perturbazione come una serie di Fourier e eseguire una media ergodica.
+
+\item I processi di marea portano a sforzi di deformazione sul pianeta in orbita attorno ad un corpo centrale che sono di carattere dissipativo. La perdita di energia si arresta nel momento in cui si raggiunge la condizione di corotazione.
+
+\item Considero due corpi orbitanti dotati di spin e minimizzo l'energia (dissipata da processi di marea) imponendo la conservazione del momento angolare. Al di sopra di un certo momento angolare critico esistono $2$ soluzioni di corotazione. Se un sistema si trova più vicino al pianeta del raggio di corotazione interno la dissipazione lo porta al collasso. Viceversa se si trova in un punto intermedio tra i raggi di corotazione interno ed esterno la dissipazione lo porta sull'orbita esterna che è stabile.
+
+\item Per il sistema Terra-Luna si è sincronizzato lo spin della Luna con il suo periodo orbitale. Ma non con lo spin della Terra (richiede tempi molto lunghi).
+
+\item Un esempio di sistema perfettamente sincronizzato sono Plutone e Caronte.
+
+\item Quando Luna e Terra saranno perfettamente sincronizzati la Luna avrà raddoppiato il suo periodo e la distanza dalla Terra sarà quadruplicata.
+
+\item Si può calcolare il potenziale gravitazionale di un corpo non puntiforme mediante un'espansione in polinomi di Legendre (espansione in multipoli). Consideriamo un sistema a simmetria cilindrica, esso possiede un momento di quadrupolo non banale:
+\begin{equation}
+V(r) = -\frac{GM}{r} \left[ 1 + \frac{1}{2 r^2} \left( 3 \cos^2 \theta - 1 \right) \left( A - C \right) \right]
+\end{equation}
+
+dove $A$ e $C$ sono i due momenti di inerzia. Si può inrodurre il parametro $J_2 = \frac{C-A}{M R^2}$.
+
+\item La perturbazione relativa all'orbita Lunare dovuta a questo effetto è $3 \cdot 10^{-7}$ e causerebbe una retrogradazione dei nodi con periodo $T = 3 \cdot 10^5$ anni. Questo effetto non è facilmente osservabile, perché la retrogradazione dei nodi reale è di soli $19$ anni. Per la terra $J \sim 10^{-3}$.
+
+\item Si può usare il \textbf{metodo di Newton} per studiare l'orbita di un corpo che subisce una perturbazione di tipo $\frac{1}{r^3}$ dal caso kepleriano. Consideriamo le equazioni definenti un moto kepleriano:
+\begin{equation}
+\begin{cases}
+ \ddot{r} - r \dot{\lambda}^2 = \frac
+{f}{\mu} \\
+ r \ddot{\lambda} + 2 \dot{r} \dot{\lambda} = 0
+\end{cases}
+\end{equation} 
+Introduciamo $J$ il momento angolare, allora scriviamo $\mu \ddot{r} = f + \frac{J^2}{\mu r^3}$. Questo significa che aggiungere una forza $\frac{c}{r^3}$ equivale a cambiare il momento angolare $J \rightarrow J' = J + \mu c$. Quindi la velocità angolare $\dot{\lambda}$ del moto perturbato si calcola come:
+\begin{equation}
+\dot{\lambda} = \frac{J}{J'} \dot{\lambda'}
+\end{equation}
+dove $\dot{\lambda'}$ è la velocità di un moto kepleriano. Calcoliamo quindi lo spostamento del pericentro:
+\begin{equation}
+2 \Delta - 2 \pi = 2 \pi \left( \frac{J}{J'} - 1 \right)
+\end{equation}
+
+\item Il metodo precedente si può anche applicare nel caso di una perturbazione non del tipo $\frac{1}{r^3}$ (approssimando). In effetti se la perturbazione è del tipo $f =-\frac{3 Q}{r^4}$ come quelle generate da un quadrupolo allora si può vedere come il moto medio del pericentro sia: $\frac{3}{2} n \frac{R^2}{a^2} J_2$ proporzionale alla differenza adimensionale dei momenti di inerzia della Terra. Dove $a$ è la distanza Terra-Luna e $R$ e il raggio della Terra. Ricordiamo che questo effetto è la precessione del pericentro dell'orbita della Luna a causa del quadrupolo della Terra.
+
+\item Studieremo ora la precessione lunisolare ovvero l'effetto della Luna e del Sole (considerati come puntiformi) sulla Terra (non puntiforme) che ne causa la precessione dell'asse di rotazione. Ciò provoca la precessione dell'equatore celeste e quindi del punto di Ariete e di Bilancia. Questa non è altro che l'ordinaria precessione degli equinozi.
+
+\item Se scegliamo un sistema di coordinate avente l'asse $z$ coincidente con l'asse di rotazione della Terra possiamo scrivere il momento torcente esercitato sulla Terra dal Sole (che si trova nella posizione $X$, $Y$ e $Z$):
+\begin{equation}
+\begin{cases}
+k_x = \frac{3 G M_s}{R^5} YZ \left( C - A \right) \\
+k_y = \frac{3 G M_s}{R^5} XZ \left( A - C \right) \\
+k_z = 0
+\end{cases}
+\end{equation}
+
+\item E' comodo passare alle coordinate eclittiche, che hanno un asse lungo la congiungente Terra-Sole. Questo permette di scrivere facilmente le medie sul periodo di rivoluzione del Sole. Introduciamo l'angolo $\epsilon$ tra l'equatore celeste e il piano dell'eclittica, possiamo scrivere la velocità media di precessione come:
+\begin{equation}
+p_{S} = \frac{3 G M_S}{2 R^3} \frac{C-A}{C n_0} \cos \epsilon
+\end{equation}
+
+\item L'effetto della Luna è due volte quello del Sole. In totale la pressione dei punti equinoziali è $p = 50\frac{''}{\text{years}}$.
+
+\item Vettore di Lenz: $\vec{A} = \vec{r} \times \vec{L} - \gamma \hat{r}$, indica la direzione del perielio.
+
+\item Il giorno siderale è il tempo che intercorre tra due diverse culminazioni del punto $\gamma$. Questo è considerato approssimativamente fisso sulla sfera celeste (in realtà si sposta a causa della precessione degli equinozi). Si intende che il punto attraversa due volte lo stesso meridiano. Il giorno solare è invece l'intervallo di tempo tra due passaggi allo stesso meridiano del Sole. Questi due intervalli di tempo differiscono per 4 minuti. Il giorno siderale dura meno di 24 ore (giorno solare).
+\end{itemize}
+
+\section{Formazione stellare}
+
+\begin{itemize}
+\item Condizione perché il collasso stia \textbf{accelerando}: $\frac{d^2 I}{dt^2} = 2K + U < 0$. Diventa $K < \Big | \frac{U}{2} \Big|$. Per una sfera (di densità omogenea) di idrogeno la condizione si scrive:
+\begin{equation}
+kT < \frac{2}{5} \left( \frac{4 \pi}{3} \right) ^{\frac{1}{3}} G M^{\frac{2}{3}} m_p \rho^{\frac{1}{3}}
+\end{equation}
+
+\item Nelle fasi iniziali del collasso la temperatura rimane costante ($\sim 10 \si{\kelvin}$) ed è determinata dall'ambiente circostante piuttosto che dal riscaldamento dovuto alla contrazione. Dunque la condizione precedente si può scrivere come:
+\begin{equation}
+\rho > 10^{-18} \left( \frac{M}{M_{S}} \right) ^{-2} \frac{g}{cm^3}
+\end{equation}
+
+\item Estensione dell'analisi al caso di nube rotante: $K = K_t + K_{rot}$. Introduco i due parametri $\alpha = \frac{K_t}{|U|}$ e $\beta = \frac{K_{rot}}{|U|}$. La condizione di collasso è:
+\begin{equation}
+\alpha + \beta < \frac{1}{2}
+\end{equation}
+
+\item Osserviamo che $K_t \propto \rho^0$, $K_{rot} \propto \rho^{\frac{2}{3}}$ e $|U| \propto \rho^{\frac{1}{3}}$. In particolare definiamo: $\alpha(\rho) = \alpha(\rho_0) \left( \frac{\rho}{\rho_0} \right) ^ {-\frac{1}{3}}$ e $\beta(\rho) = \beta(\rho_0) \left( \frac{\rho}{\rho_0} \right) ^ {\frac{1}{3}}$. Dunque nominando $\psi = \frac{\rho}{\rho_0}$ otteniamo:
+\begin{equation}
+f(\psi) = \alpha (\rho_0) \psi^{-\frac{1}{3}} +  \beta (\rho_0) \psi^{+\frac{1}{3}}
+\end{equation}
+Perché ci sia accelerazione del collasso deve essere $f < \frac{1}{2}$. Si vede che $f$ ha un minimo e la condizione di collasso proibito si può scrivere come $16 \alpha_0 \beta_0 > 1$.
+
+\item E' da notare che la condizione $\alpha + \beta = \frac{1}{2}$ equivale alla condizione meccanica $F = 0$ non a $v = 0$.
+
+\item \textbf{Fissione per rotazione} Quando la frazione di energia rotazionale supera una certa soglia $\beta_c = 0.25$ allora avviene la fissione per rotazione il momento angolare viene ripartito in $2\lambda+\lambda_{orb} = 1$, con $\lambda$ lo spin delle due parti formate. I corpi generati hanno un nuovo $\beta^{\frac{1}{2}} = 2^{\frac{10}{3}} \lambda^2 \beta_c$, la fissione continua finché non si scende sotto $\beta_c$ per i residui della fissione. La maggior parte del momento angolare diventa orbitale.
+
+\item \textbf{Contrazione adiabatica} La nube inizialmente è trasparente alla radiazione e attraversa una fase di contrazione isoterma ($T \sim 10 \si{\kelvin}$). Tuttavia segue una fase adiabatica in cui i fotoni non possono scappare dalla nube e il riscaldamento è appunto adiabatico. Il libero cammino medio è definito da $l = \frac{1}{k \rho}$. La condizione per l'inizio della contrazione adiabatica è $l < R$. Assumendo che $T = 10 K$ vediamo che la condizione diventa $\rho_{AD} \propto M^{-\frac{1}{2}}$. 
+
+\item Se la contrazione fosse veramente adiabatica la densità non potrebbe aumentare più di $8$ volte dall'inizio della fase adiabatica. Ammettiamo infatti che all'inizio $\alpha = 0$ allora alla fine $K_t = - \Delta U$. La contrazione finisce (in realtà questo è solo l'equilibrio delle forze) quando: $K_t = \frac{1}{2} | U + \Delta U |$ da queste equazioni si può ricavare che $R' = \frac{R}{2}$. In realtà la contrazione non è mai perfettamente adiabatica.
+
+\item In generale l'arresto del collasso si ha se la temperatura aumenta fortemente con la densità. Per $T > 1000 K$ iniziano i processi di ionizzazione e dissociazione che rallentano l'aumento della temperatura e quindi l'arresto del collasso.
+
+\item In generale il nucleo centrale terminerà il collasso prima delle regioni periferiche che subiranno quindi un rimbalzo e uno smorzamento fino all'equilibrio.
+
+\end{itemize}
+
+\section{Formazione planetaria}
+\begin{itemize}
+\item Gli attuali modelli di formazione planetaria prevedono al condensazione di un disco di materia intorno alla stella. IL modello alla Cameron prevede un disco di massa circa uguale a quello della stella. Mentre quello alla Safronov necessità di un disco di massa molto minore (un centesimo della massa centrale). L'ultimo sembra essere il più affermato.
+
+\item Il criterio di Jeans affronta la formazione di instabilità gravitazionali in un mezzo omogeneo e isotropo.
+
+\item  Abbiamo un background isotropo ($\vec{v}_0 = 0$) e omogeneo ($\phi_0$, $\rho_0$ uniformi). Queste ipotesi sono in realtà inconsistenti, ignoreremo il problema.
+
+\item Consideriamo l'equazione di Eulero, quella di continuità e di Poisson:
+\begin{equation}
+\begin{cases}
+\rho \left[ \frac{\partial \vec{v}}{\partial t} + \left( \vec{v} \cdot \vec{\nabla}p \right)  \vec{v} \right] = - \rho \vec{\nabla} \phi - \vec{\nabla} \\
+\frac{\partial \rho  }{\partial t} + \vec{\nabla} \left( \rho \vec{v} \right) = 0 \\
+\nabla^2 \phi = 4 \pi G \rho
+\end{cases}
+\end{equation}
+
+Introduciamo una perturbazione $P_1, \phi_1, \vec{v}_1$ che supponiamo essere isoterma: $P_1 = c_T^{2} \rho_1$ dove $c_T = \sqrt{\frac{kT}{2 m_p}}$ è la velocità del suono isoterma. Inoltre supponiamo che la perturbazione sia armonica:
+\begin{equation}
+\begin{cases}
+P_1 = P_{10} e^{\vec{k} \cdot \vec{r} - \omega t}\\
+\vec{v}_1 = \vec{v}_{10} e^{\vec{k} \cdot \vec{r} - \omega t}
+\end{cases}
+\end{equation}
+Notiamo che $P_{10}$ e $\vec{v}_1$ possono anche essere complessi in modo da considerare eventuali differenze di fase tra pressione e velocità. $\phi$ e $\rho$ hanno simili comportamenti oscillatori.
+
+\item Sostituendo queste perturbazioni all'interno delle equazioni fondamentali otteniamo la relazione di dispersione:
+\begin{equation}
+\omega^2 = k^2 c_T^2 - 4 \pi G \rho_0
+\end{equation}
+Esistono delle soluzioni che crescono esponenzialmente se $\omega^2 < 0$. Questo porta alla conclusione che siano instabili le perturbazioni con lunghezza d'onda (\textbf{criterio di Jeans}):
+\begin{equation}
+\lambda > \lambda_J = \left( \frac{\pi K T}{2 G \rho_0 m_P} \right) ^ {\frac{1}{2}}
+\end{equation}
+Il calcolo è fatto per una nube di idrogeno. Considerando questa lunghezza come la dimensione lineare della più piccola massa che può collassare, otteniamo $M \propto T^{\frac{3}{2}} \rho_0^{-\frac{1}{2}}$. Si ottiene sostanzialmente la condizione di inizio collasso $\rho \propto M^{-2}$.
+
+\item Si può avere frazionamento durante il collasso.
+
+\item Forniamo ora una interpretazione limite del criterio di Jeans. Se $\omega = 0$ abbiamo $k^2 c_s^2 = 4 \pi G \rho_0$, dunque $c_s^2 \sim G \rho_0 \lambda^2 \sim \frac{GM}{r}$. Inoltre vale $c_s^2 \sim \frac{K}{2m}$ cioè la velocità del suono è circa la velocità delle particelle che costituiscono il gas. Questa proporzionalità tra energia cinetica e energia potenziale gravitazionale ricorda il teorema del viriale. Si può anche definire la frequenza di Jeans come $\Omega_{J}^{2} = 4 \pi G \rho_0$, nelle equazioni gioca un ruolo analogo alla frequenza di plasma.
+
+\item Per considerare la \textbf{turbolenza} introduciamo una velocità caratteristica dei moti turbolenti: $c_s^2 \rightarrow c_s^2 + v_t^2$. Questo causa un aumento della lunghezza d'onda di Jeans che è associata alla dimensione minima di un sistema che può collassare: $\lambda_J = \frac{2 \pi}{\Omega_J} \sqrt{c_s^2+v_t^2}$. Se $v_t$ domina sul fattore termico $c_s$ si può anche avere $M \propto v_t^{\frac{3}{2}} \rho^{-\frac{1}{2}}$. Da ciò sembra che la turbolenza possa solo rendere più difficile il collasso ma in realtà può creare zone ad alta densità in cui il collasso è favorito.
+
+\item Si può considerare la presenza di un campo magnetico attraverso la pressione aggiuntiva che esso esercita. Ciò può essere ridotto alla sostituzione $c_s^2 \rightarrow c_s^2 + \frac{B^2}{4 \pi}$. Dunque abbiamo (se la pressione magnetica domina): $M \propto B^3 \rho^{-2}$, eventualmente $M=const.$ può verificarsi. Effetti aggiuntivi dovuti alla presenza di $B$ sono la separazione tra la materia carica e quella neutra. Inoltre può non essere sufficiente considerare $B$ come un termine di pressione aggiuntiva. $B$ rompe la simmetria sferica.
+
+\item L'effetto della \textbf{rotazione uniforme} con velocità angolare $\Omega$ si può considerare aggiungendo un termine nella relazione di dispersione: $\omega^2 = c_s^2 k^2 - \Omega_{J}^2+\Omega^2$. Questo porta alla seguente formula per la massa minima che può avere instabilità: 
+\begin{equation}
+M \propto \frac{c_s^3 \rho}{\left( 4 \pi G \rho_0 - \Omega^2 \right) ^ {\frac{3}{2}}}
+\end{equation}
+La rotazione rende più difficile il collasso (aumenta la massa minima) e introduce una nuova condizione: $ 4 \pi G \rho_0 - \Omega^2$. Questa condizione si rivela essere collegata a $\alpha + \beta < \frac{1}{2}$.
+
+\item Per il caso di \textbf{rotazione non uniforme}, in particolare di una disuniformità nella velocità angolare di rotazione $\omega$ come quella presente in un moto kepleriano indotto da una massa centrale possiamo scrivere: $\omega^2 = c_s^2 k^2 - \Omega_J^2+\omega_{kepl}(r)^2$. Notare che il termine aggiunto dipende da $r$. La massa minima diventa:
+\begin{equation}
+M \propto \frac{c_s^3 \rho}{\left[ 4 \pi G \rho_0 - \omega_{kepl}^{2}(r) \right]^ {\frac{3}{2}}}
+\end{equation}
+Ciò porta a una condizione per la formazione di perturbazioni autogravitanti uguale a quella per il limite di Roche: $r > R^{*} \left( \frac{\rho^{*}}{3 \rho_0} \right) ^ {\frac{1}{3}}$. Dove $R^{*}$ è il raggio della massa centrale e $\rho^{*}$ è a sua densità. Questa condizione può ancora essere elaborata in $M_{nube} > \frac{M*}{3}$.
+
+\item Il limite di Roche è legato alla possibilità di formazione di perturbazioni autogravitanti. Perché si formi un pianeta questo deve avere una densità minima: $\rho > \rho_{S} \left( \frac{1.44 R_S}{a} \right)^3$. 
+
+\item Per un disco protoplanetario nel modello di Safronov questa condizione ($M_{nube} > \frac{M*}{3}$) non è verificata. Bisogna usare il modello di Cameron.
+
+\item Si ipotizza che la componente nella nube possa sedimentare a formar un disco molto più sottile in cui è facile il raggiungimento della densità critica.
+
+\item Si può riscalare 
+\end{itemize}
+
+\section{Valori Numerici}
+
+\begin{itemize}
+\item Tempo di collasso in caduta libera per il Sole: $t_{ff} = 1$h.
+\item Tempo di collasso in caduta libera per una stella che sta morendo: $t_{ff} = 1 \si{\second}$.
+\item Tempo di collasso nube interstellare: $t_{ff} = 10^{6}$ anni.
+\item Densità nube interstellare: $\rho = 10^{-20} \frac{g}{cm^{3}}$.
+\item Densità stella che sta morendo: $\rho = 10^{8} \frac{g}{cm^{3}}$.
+\item Il Sole ha circa la densità dell'acqua.
+\item Periodo rotazione Sole: $T = 1$ mese.
+\item Periodo rotazione stelle più grandi (sequenza principale): $T = 1$ giorno.
+\item Densità a cui inizia a interveire il processo di neutronizzazione: $\rho = 10^{10}\frac{g}{cm^{3}}$.
+\item Tempo di Kelvin- Helmoltz del Sole: $30$ milioni di anni.
+\item Spettro visibile tra i $3600 \si{\angstrom}$ e i $7600 \si{\angstrom}$.
+\item Curve di visibilità: occhio umano ($5500-6000 \si{\angstrom}$), lastra fotografica ($4000-4500 \si{\angstrom}$).
+\item Banda passante larga (parecchie centinaia di $\si{\angstrom}$), media (poche centinaia di $\si{\angstrom}$), stretta (meno di $100 \si{\angstrom}$).
+\item Semilarghezze di Banda del filtro UBV sono $900 \si{\angstrom}$, $1000 \si{\angstrom}$ e $700 \si{\angstrom}$.
+\item Riga $H_{\alpha}$ ($3 \rightarrow 2$) $6563 \si{\angstrom}$, $H_\beta$ ($4 \rightarrow 2$) $4861 \si{\angstrom}$.
+\item La Vega($\alpha$ Lyr) ha magnitudo $0$.
+\item Velocità di fuga da stella può essere anche $v = 10^{3} \si{\frac{k \meter}{\second}}$.
+\item L'allargamento naturale di una riga è dell'ordine del raggio classico dell'elettrone cioè $r_c = 10^{-4} \si{\angstrom}$.
+\item Temperatura effetti del Sole è $5777 \si{\kelvin}$.
+\item Massa del Sole $M_S = 2 \cdot 10^{30}$
+\item Raggio del Sole: $R_S = 7 \cdot 10^5 \si{\kilo \meter}$, circa $100$ volte quello della Terra.
+\item Distanza del nucleo galattico: $10$kpc.
+\item Età Sole $4.5$ miliardi di anni.
+\item Età delle supergiganti blu:  $100$ milioni di anni.
+\item Stelle veloci $> 60 \si{\frac{\kilo \meter}{\second}}$.
+\item Metallicità stelle di popolazione II: $0.3\%$, metallicità per stelle di popolazione I: raggiunge anche il $3\%$.
+\item Metallicità del Sole: $2\%$.
+\item Temperature delle reazioni nucleari: PP $10^7 \si{\kelvin}$, CNO $3 \cdot 10^7 \si{\kelvin}$, fusione di nuclei di elio in carbonio $10^{8} \si{\kelvin}$.
+\item Dimensione delle galassie: decine di kpc (via lattea diametro di $32$kpc), le distanze delle galassie sono dell'ordine dei Mpc
+\item Dimensioni angolari galassie e nebulose: ordine dei minuti d'arco se non addirittura di $1 \si{\degree}$.
+\item Il valore medio della brillanza di una galassia è $22$ magnitudo per secondo d'arco quadrato.
+\item L'Universo era $1000$ volte più piccolo quando la radiazione si è separata dalla materia.
+\item La massa di Giove è $1000$ volte più piccola di quella del Sole.
+\item La massa della Terra è $1000$ più piccola di quella di Giove.
+\item La perturbazione sulla Luna dovuta alla non sfericità della Terra introduce una correzione di ordine $10^{- 7}$ sull'orbita lunare.
+\item Nella sua configurazione finale la Luna raddoppia il periodo e quadruplica la distanza dalla Terra. Raddoppia il suo momento angolare orbitale.
+\item Periodo della retrogradazione della linea dei nodi dell'orbita Lunare dovuto a non sfericità della Terra: $10^{5}$ anni, in effetti ci sono altri contributi più importanti poiché il periodo vero della retrogradazione dei nodi è $19$ anni.
+\item La Luna dista dalla Terra $60$ volte il raggio della Terra, che è di circa $6000 \si{k\meter}$, quindi dista $380000 \si{k\meter}$.
+\item Parallasse diurna della Luna: $1'$.
+\item Per superare la barriere di repulsione coulombiana termicamente serve T = $10^{10}$ K, grazie a effetto tunnel basta T = $10^{7}$K.
+\item Percentuale di energia (in massa) emessa derivante dal collasso gravitazionale durante l'evoluzione: $10\%$.
+\item Percentuale dell'energia emessa derivante da reazioni nucleari $1\%$.
+\item Sezione d'urto delle reazioni nucleari deboli $10^{-10}$ più piccola delle sezioni d'urto forti
+\item La PP1 è molto lenta (debole) e consuma i p in $10^{10}$ anni.
+\item Una cella di convezione sale in usa stella con velocità $10^{2} \si{\frac{\meter}{\second}}$ mentre la sua velocità di espansione è quella del suono ($10^{3} \si{\frac{\meter}{\second}}$) dunque si ha espansione adiabatica in cui però si mantiene sempre equilibrio meccanico.
+\item Conversione tra energia e temperatura: $1$eV diventa $10^{4} \si{\kelvin}$.
+\item Massa della Via Lattea: $100$ miliardi di masse solari.
+\item I fotoni nel visibile hanno energie $>2$eV.
+\item Il periodo di rivoluzione del Sole intorno al centro galattico è di circa $100$ milioni di anni. La sua velocità orbitale di $300 \si{\frac{\kilo \m}{\s}}$.
+\item La velocità orbitale della Terra intorno al Sole è di $30 \si{\frac{\kilo \meter}{\s}}$.
+\item $1$a.l. corrisponde a circa $63000$u.a.
+\item La Luna ha una massa $80$ volte inferiore a quella terreste e il suo raggio è di circa $1700 \si{\kilo \meter}$, contro i $6300 \si{\kilo \meter}$ della Terra.
+\item Il raggio del Sole è $100$ quello della Terra e $10$ volte quello di Giove.
+\item Si pensa che il $5-10\%$ delle stelle abbia pianeti massicci.
+\end{itemize}
+
+\end{document}

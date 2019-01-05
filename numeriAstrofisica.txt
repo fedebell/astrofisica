@@ -1,0 +1,51 @@
+Numeri di Astrofisica
+-Tempo di collasso in caduta libera del sole: 1 ora
+-Tempo di collasso in caduta libera stella che sta morendo: 1s
+-Tempo di collasso nube interstellare: 10^6 anni
+-Densità nube interstellare 10^{-20} g/cm^3.
+-Densità stella che sta morendo 10^{8} g/cm^3
+-Il sole ha circa la densità dell'acqua.
+-Tempo di collasso prop p_{media}^{-1/2}
+-Periodo rotazione sole: 1 mese
+-Periodo rotazione stelle più grandi (sequenza principale): 1 giorno
+-Densità a cui inizia a interveire il processo di neutronizzazione: 10^{10} g/cm^3
+-Tempo di Kelvin-Helmoltz del sole: 30 milioni di anni.
+-Spettro visibile tra i 3600A e i 7600A
+-Curve di visibilità: occhio umano (5500-6000 A), lastra fotografica (4000-4500)
+-Banda passante larga (parecchie centinaia di A), media (poche centinaia di A), stretta (meno di 100 A)
+-Semilarghezze di Banda dei filtro UBV sono 900, 1000 e 700
+-Riga H_alpha (3->2) 6563, H_beta (4->2) 4861.
+-La Vega ha magnitudine 0.
+-Velocità di fuga da stella può essere anche 10^3 km/s
+-Larghezza di riga può anche essere 10 A/mm
+-L'allargamento naturale di una riga è dell'ordine del raggio clasico dell'elettrone cioè 10^-4 A
+-Temperatura effetti del sole è 5777K
+-Massa del sole 2*10^30 kg
+-Raggio del Sole: 7*10^5 (700000) km
+-Distanza del nucleo galattico: 10kpc
+-Età sole 4.5 miliardi di anni
+-Età delle supergiganti blu 100 milioni di anni
+-Stelle veloci > 60 km/s
+-Metallicità stelle di popolazione II: 0.3%, metallicità per stelle di popolazione I: raggiunge anche il 3%.
+-Metallicità del sole: 2%.
+-Temperature delle reazioni nucleari: PP 10^7, CNO 3 * 10^7, 3 \alpha 10^8.
+-Dimensione delle galassie: decine di kparsec (via lattea diametro di 32 parsec), le distanze delle galassie sono dell'ordine dei Mpc
+-Dimensioni angolari ordine dei minuti d'arco se non addirittura di 1 grado (per nebulose e galassie).
+-Il valore medio della brillanza di una galassia è 22 magnitudo/secondo^2.
+-L'universo era 100 volte più piccolo qundo è stata emessa la radiazione cosmica di fondo.
+-La massa di giove è 1000 volte più piccola di quella del sole.
+-Perturbazione sulla luna dovuta alla non sfericità della terra (introduce una correzione di ordine 10^{-7})
+-Nella sua configurazioen finale la luna raddoppia il periodo e quadruplica la distanza. Raddoppia il suo momento angolare orbitale.
+-Periodo della retrogradazione della linea dei nodi dell'orbita lunare dovuto a non sfericità della terrà: 10^5 anni, in effetti ci sono altri contributi più importanti poichè In efetti il periodo vero della retrogradazione dei nodi è 19 anni.
+-La luna dista dalla Terra 60 volte il raggio della Terra, chè è di circa 6000 km, quindi dista 380000 km.
+-Parallasse diurna della luna: 1 grado
+-Per sueperare la barriere di repulasione columbiana termicamete serve T = 10^10 K, grazie a effetto tunnel basta T = 10^7
+-Percentuale di energia (in massa) emessa derivante dal collasso gravitazionale durante l'evoluzione = 10%
+-Percentuale dell'energia emessa derivante da reazioni nucleari 1%
+-Sezione d'urto delle reazioni nucleari deboli 10^(-10) sezioni d'urto forti
+-La PP1 è molto lenta (debole) e consuma i p in 10^10 anni.
+-Una cella di convezione sale in usa stella con velocità 10^2 m/s mentre la sua velocità di espanzione è quella del suono (10^3 m/s) dunque si ha espazone adiabatica in cui si mantiene sempre equilibrio meccanica.
+-Conversione tra energia e temperatura: 1eV diventa 10^4 K
+-Velocità idrogeno in stelle 1000 m/s
+-100 milioni di anni periodo orbita sole attorno a galassia
+-100 miliardi di masse solari (via lattea)
