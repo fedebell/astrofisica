@@ -1,8 +1,42 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage{fabio_zoratti_article}
-\usepackage{mdwlist}
-\usepackage{courier}
+\usepackage{etex}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[a4paper]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage{mathrsfs}
+\usepackage{caption}
+\usepackage{color}
 \usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{paralist}
+\usepackage{subfig}
+\usepackage{array}
+\usepackage{xy}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage[T1,OT1]{fontenc} 
+\usepackage{chemfig}
+\usepackage{epigraph}
+\usepackage{textcomp}
+\usepackage[makeroom]{cancel}
+\usepackage{enumitem}
+\usepackage{braket}
+\usepackage{grffile}
+\usepackage{tikz}
+\usepackage{pgf,tikz}
+\usetikzlibrary{shapes.geometric,calc}
+\usetikzlibrary{arrows}
 
 \author{Federico Belliardo \thanks{federico.belliardo@sns.it}}
 \title{Note di Astrofisica}
@@ -16,7 +50,7 @@
 \begin{itemize}
 \item Tempo di collasso:
 \begin{equation}
-t_f(F) = \left( \frac{3 \pi}{16 F G \bar{\rho}} \right) ^{\frac{1}{2}}
+t_f(F) = \left( \frac{3 \pi}{16 F G \widehat{\rho}} \right) ^{\frac{1}{2}}
 \end{equation}
 Notare che $t_f(F) \propto \bar{\rho}^{-\frac{1}{2}}$.
 \item Durante il collasso la densità media $\bar{\rho}$ aumenta, ma questo non cambia l'ordine di grandezza del tempo di collasso.
@@ -1316,7 +1350,13 @@ Ciò porta a una condizione per la formazione di perturbazioni autogravitanti ug
 
 \item Si ipotizza che la componente nella nube possa sedimentare a formar un disco molto più sottile in cui è facile il raggiungimento della densità critica.
 
-\item Si può riscalare 
+\item Si può riscalare la quantità dei vari elementi presenti nei pianeti (assumendo che la composizione della nube originale fosse la stessa del Sole) per calcolare la densità minima del disco originale e la sua massa (conferma modello di Safronov).
+
+\item Il disco di allarga (in altezza) all'aumentare della distanza dal sole (da equazioni di equilibrio idrostatico).
+
+\item Perché le collisioni tra planetesimi siano costruttive è necessario $v_{rel} < v_{fuga}$.
+
+\item I pianeti di massa maggiore crescono più velocemente (\textit{run away growth}). Si formano pianeti giganti che dominano la zona.
 \end{itemize}
 
 \section{Valori Numerici}
@@ -1376,6 +1416,7 @@ Ciò porta a una condizione per la formazione di perturbazioni autogravitanti ug
 \item La Luna ha una massa $80$ volte inferiore a quella terreste e il suo raggio è di circa $1700 \si{\kilo \meter}$, contro i $6300 \si{\kilo \meter}$ della Terra.
 \item Il raggio del Sole è $100$ quello della Terra e $10$ volte quello di Giove.
 \item Si pensa che il $5-10\%$ delle stelle abbia pianeti massicci.
+\item Il tempo di scala dell'aggregazione dei planetesimi è $\tau \sim 10^6$ anni.
 \end{itemize}
 
 \end{document}
